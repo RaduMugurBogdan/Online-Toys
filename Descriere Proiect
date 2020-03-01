@@ -1,1 +1,26 @@
+Aplicatia se are la baza doua componente majore : partea client si partea administrator.
 
+Partea de client:
+    Pagini nencesare:
+        1. Pagina principala :prezinta reclame la principalele produse
+        2. Pagina de prezentare a produsului
+        3. Pagina de raspuns la filtrare (contine si filtrele de cautare)
+        4. Pagina cosului
+        5. Pagina de favorite
+        6. Pagina de creare comt
+        7. Pagina de administrare cont (modificare setari cont)
+        8. Pagina de login
+    
+
+Partea de administrator:
+    Pagini necesare:
+        1.Pagina de login;
+        2.Pagina Principala (ce se conecteaza cu toate celelalte pagini)
+        2.Pagina de comenzi
+        3.Pagina conturilor clientilor
+        4.Pagina de editare site-ului >
+                                        4.1 pagina de introducere/eliminarer reclame
+                                        4.2 pagina de editare a ierarhiei de de produse
+                                        4.3 pagina de introducere/eliminare produse
+                                        ...............................
+        
