@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Main Frame</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="./frame_style.css">
+        <link rel="stylesheet" href="../product_mini_view/pmv_style.css">
+    </head>
+    <body>
+        <nav id="nav_frame_container"  onmouseout="reset_all()">
+            <nav id="frame_nav">
+                <section id="menu">
+                    <section class="menu_item" onmouseover="resize_function(this)" onmouseout="keep_p(this)" id="cat_1">
+                        Filtre
+                    </section>
+                    <section class="menu_item" onmouseover="resize_function(this)"  onmouseout="keep_p(this)" id="cat_2">
+                        Topuri
+                    </section>
+                    <section class="menu_item" onmouseover="resize_function(this)" onmouseout="keep_p(this)" id="cat_3">
+                        Categorii
+                    </section>
+                    <section class="menu_item" onmouseover="resize_function(this)" onmouseout="keep_p(this)" id="cat_4">
+                        Categorii
+                    </section>
+                </section>
+                <section id="searching_panel">
+                    <input type="text" id="search_bar">
+                    <button id="search_button" ><i class="material-icons" style="font-size:36px">search</i></button>
+                </section>
+                <section id="client_options_panel">
+                    <section class="client_item" >
+                        <i class='fas fa-star' style='font-size:30px'></i>  
+                    </section>
+
+
+                    <section class="client_item" >
+                        <i class='fas fa-shopping-cart' style='font-size:30px'></i>  
+                    </section>
+                    <section class="client_item" >
+                        <i class='fas fa-user-circle' style='font-size:30px'></i>
+                    </section>
+                </section>
+                
+            </nav>
+            <section id="nav_details_container"  onmouseover="resize_container(this)" onmouseout="default_container(this)"> 
+            
+            </section>
+        </nav>
+            <section id="frame_body">        
+                <section id="frame_content">
+                    <!--
+
+                        products_area
+
+                    -->
+                    <section id="view_container">
+                        <section id="products_container"> 
+                            <div class="product_mini_view">
+                                <div class="product_mini_picture"><img src="../resurse/car.jpg" class="product_image"></div>
+                                <hr class="view_sep">
+                                <div class="product_mini_description">Masina HotWheels</div>
+                            </div>  
+                            <div class="product_mini_view">
+                                <div class="product_mini_picture"><img src="../resurse/car.jpg" class="product_image"></div>
+                                <hr class="view_sep">
+                                <div class="product_mini_description">Masina HotWheels</div>
+                            </div>  
+                            <div class="product_mini_view">
+                                <div class="product_mini_picture"><img src="../resurse/car.jpg" class="product_image"></div>
+                                <hr class="view_sep">
+                                <div class="product_mini_description">Masina HotWheels</div>
+                            </div>  
+                            <div class="product_mini_view">
+                                <div class="product_mini_picture"><img src="../resurse/car.jpg" class="product_image"></div>
+                                <hr class="view_sep">
+                                <div class="product_mini_description">Masina HotWheels</div>
+                            </div>  
+                            <div class="product_mini_view">
+                                <div class="product_mini_picture"><img src="../resurse/car.jpg" class="product_image"></div>
+                                <hr class="view_sep">
+                                <div class="product_mini_description">Masina HotWheels</div>
+                            </div>  
+                            <div class="product_mini_view">
+                                <div class="product_mini_picture"><img src="../resurse/car.jpg" class="product_image"></div>
+                                <hr class="view_sep">
+                                <div class="product_mini_description">Masina HotWheels</div>
+                            </div>  
+                            <div class="product_mini_view">
+                                <div class="product_mini_picture"><img src="../resurse/car.jpg" class="product_image"></div>
+                                <hr class="view_sep">
+                                <div class="product_mini_description">Masina HotWheels</div>
+                            </div>  
+                            <div class="product_mini_view">
+                                <div class="product_mini_picture"><img src="../resurse/car.jpg" class="product_image"></div>
+                                <hr class="view_sep">
+                                <div class="product_mini_description">Masina HotWheels</div>
+                            </div>  
+                            <div class="product_mini_view">
+                                <div class="product_mini_picture"><img src="../resurse/car.jpg" class="product_image"></div>
+                                <hr class="view_sep">
+                                <div class="product_mini_description">Masina HotWheels</div>
+                            </div>  
+                            <div class="product_mini_view">
+                                <div class="product_mini_picture"><img src="../resurse/car.jpg" class="product_image"></div>
+                                <hr class="view_sep">
+                                <div class="product_mini_description">Masina HotWheels</div>
+                            </div>  
+                            <div class="product_mini_view">
+                                <div class="product_mini_picture"><img src="../resurse/car.jpg" class="product_image"></div>
+                                <hr class="view_sep">
+                                <div class="product_mini_description">Masina HotWheels</div>
+                            </div>  
+                            <div class="product_mini_view">
+                                <div class="product_mini_picture"><img src="../resurse/car.jpg" class="product_image"></div>
+                                <hr class="view_sep">
+                                <div class="product_mini_description">Masina HotWheels</div>
+                            </div>  
+                            <div class="product_mini_view">
+                                <div class="product_mini_picture"><img src="../resurse/car.jpg" class="product_image"></div>
+                                <hr class="view_sep">
+                                <div class="product_mini_description">Masina HotWheels</div>
+                            </div>  
+                            <div class="product_mini_view">
+                                <div class="product_mini_picture"><img src="../resurse/car.jpg" class="product_image"></div>
+                                <hr class="view_sep">
+                                <div class="product_mini_description">Masina HotWheels</div>
+                            </div>  
+                            <div class="product_mini_view">
+                                <div class="product_mini_picture"><img src="../resurse/car.jpg" class="product_image"></div>
+                                <hr class="view_sep">
+                                <div class="product_mini_description">Masina HotWheels</div>
+                            </div>  
+                              
+                            <div class="product_mini_view">
+                                <div class="product_mini_picture"><img src="../resurse/car.jpg" class="product_image"></div>
+                                <hr class="view_sep">
+                                <div class="product_mini_description">Masina HotWheels</div>
+                            </div>  
+                              
+                            <div class="product_mini_view">
+                                <div class="product_mini_picture"><img src="../resurse/car.jpg" class="product_image"></div>
+                                <hr class="view_sep">
+                                <div class="product_mini_description">Masina HotWheels</div>
+                            </div>  
+                              
+                            <div class="product_mini_view">
+                                <div class="product_mini_picture"><img src="../resurse/car.jpg" class="product_image"></div>
+                                <hr class="view_sep">
+                                <div class="product_mini_description">Masina HotWheels</div>
+                            </div>  
+                            
+                            
+            
+                        </section>
+            
+                        <section id="page_buttons_panel">
+                                <button class="page_buttons"><i class="fa fa-arrow-circle-left" style="font-size:30px"></i></button>
+                                <span id="page_label">Page 1/<sub>100</sub> </span>
+                                <button class="page_buttons"><i class="fa fa-arrow-circle-right" style="font-size:30px"></i></button>
+                        </section>
+            
+                    </section> 
+
+
+
+                    <!--
+
+                        /products_area
+                    -->
+                </section>
+
+                <footer id="frame_footer">
+                    <section  class="footer_sub_container">
+                        <span>Dezvoltatori</span>
+                        <ul class="footer_list">
+                            <li><i class='fas fa-user-circle'></i><span class="item_data">Radu Mugur-Bogdan</span></li>
+                            <li><i class='fas fa-user-circle'></i><span class="item_data"></span>Lungu Stefan</span></li>
+                            <li><i class='fas fa-user-circle'></i><span class="item_data"></span>Dumitru Mihai</span></li>
+                        </ul> 
+                    </section>
+                    <div class="vertical_line"></div>
+                    <section  class="footer_sub_container">
+                        <span>Date de contact</span>
+                        <ul class="footer_list">
+                            <li><i class='fas fa-map-marker-alt' style='font-size:20px'></i><span class="item_data">Locatia:Judetul Iasi</li>
+                            <li><i class='far fa-comment-alt' style='font-size:20px'></i><span class="item_data"></span>Contact</span></li>
+                            <li><i class="fa fa-git" style="font-size:20px"></i><span class="item_data"></span>Proiectul</span></li>
+                        </ul> 
+                    </section>
+                </footer>
+            </section>
+             
+            <script type="text/javascript" src="./main_frame_script.js">
+            </script> 
+            <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    </body>
+</html>
