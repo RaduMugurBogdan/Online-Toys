@@ -1,0 +1,48 @@
+Aplicatia se are la baza doua componente majore : partea client si partea administrator.
+
+Partea de client:
+    Pagini nencesare:
+        1. Pagina principala :prezinta reclame la principalele produse*
+        2. Pagina de prezentare a produsului
+        3. Pagina de raspuns la filtrare (contine si filtrele de cautare)
+        4. Pagina cosului
+        5. Pagina de favorite(Optional)
+        6. Pagina de creare cont
+        7. Pagina de administrare cont (modificare setari cont)
+        8. Pagina de login
+    
+
+Partea de administrator:
+    Pagini necesare:
+        1.Pagina de login;
+        2.Pagina Principala (ce se conecteaza cu toate celelalte pagini)
+        2.Pagina de administrare a comenzilor
+        3.Pagina de administrare conturilor clientilor
+        4.Pagina de editare site-ului >
+                                        4.1 pagina de introducere/eliminarer reclame
+                                        4.2 pagina de editare a ierarhiei de de produse
+                                        4.3 pagina de introducere/eliminare produse
+                                        .................................// + inca cateva
+Descriere detaliata
+    Partea de client:
+         1.Pagina principala:
+                Pagina trebuie sa prezinte cat mai bine cateva reclame ,daca se poate mai putem adauga si cele mai vandute produse
+        2.Pagina produsului:
+                Prezinta sumar poze ale produsului ,stocul disponibil + optiunea de adaugare in cos 
+                Sub prezentarea mentionata anterior putem face sectiune de descriere a produsului
+        3. Pagina de raspuns la filtrare (contine si filtrele de cautare)
+                Aici se vor prezenta filtrele si rezultatele cautarii prin paginarea rezultatelor obtinute pe baza filtrelor
+        4.Pagina cosului 
+                Prezinta produsele adaugate in cos (sub forma de tabel) + optiuni de modificare (stergere produs , modificarea numarului de produse)
+        5.Pagina de favorite retine o lista cu produesele  salvate de utilizator 
+        6.Pagina de creare cont
+            Afiseaza un formular pe care utilizatorul trebuie sa il completeze pentru a beneficia de un cont
+                Username+Password
+                Cele mai relevante date despre client vor fi referitoare la date de contact si adresa pentru efectuarea de comenzi prin intermediul contului
+            
+        7.Pagina de administrare cont (modificare setari cont)
+                Aceasta pagina ii permite utilizatorului sa modifice datele din cadrul contului.
+        8.Pagina de Login.....
+
+    Pagina de administrator:
+        To be continued...
