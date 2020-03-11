@@ -1,0 +1,212 @@
+body{
+    background-image:url('../resurse/wallpaper.png');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    display:flex;
+    flex-direction:column;
+    align-items: flex-start;
+    overflow: auto;
+}
+
+
+#frame_nav{
+    background-color:#007fff;
+    height:60px;
+    border-bottom-style:solid;
+    border-color:lightblue;
+    border-width: 1px;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: space-between;
+}
+#menu{
+    display:flex;
+    flex-direction:row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+#searching_panel{
+    display:flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-grow:1;
+}
+
+#client_options_panel{
+    display:flex;
+    flex-direction:row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: stretch;
+}
+
+#search_bar{
+    width:40%;
+    height:50%;
+}
+#search_button{
+    height:50%;
+    width:100px;
+    margin-left:1%;
+    width:auto;
+    height:auto;
+    background-color:transparent;
+    outline:none;
+    border-style:none;
+}
+#search_button:hover{
+    color:white;
+}
+#search_bar{
+    outline: none;
+    border-style:solid;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: white;
+    color:white;
+    font-weight:bold;
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+    background-color:#001f3f;
+}
+.client_item{
+    color:#001f3f;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    padding-left:10px;
+    padding-right:10px;
+    padding-top:0px;
+    font-family: Arial, sans-serif;
+}
+.client_item:hover{
+    color:white;
+}
+
+#nav_frame_container{
+    position:fixed;
+    min-height:70px;
+    height: auto;
+    width:100%;
+    z-index:10;
+    top:0px;
+    left:0px;
+    display:flex;
+    flex-direction: column;
+}
+#nav_details_container{
+    width:100%;
+    height:0px;
+    background-color:#001f3f;
+    transition: height,0.5s;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius:10px;
+    border-bottom-style:solid;
+    border-bottom-color:white;
+    border-bottom-width:2px;
+    display:flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+#frame_content{
+    background-image:url('../resurse/wallpaper.png');
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+    width:80%;
+    height: auto;
+    min-height: 10%;
+    margin-bottom:5px;
+    margin-top:5px;
+    border-radius: 10px;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 10px 10px 30px;
+}
+#frame_footer{
+    width:100%;
+    height: auto;
+    max-height:300px;
+    background-color:#007fff;
+    margin-bottom: 0px;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.footer_sub_container{
+    padding-right:20px;
+    padding-left:20px;
+    margin-top:0px;
+    width:auto;
+    max-height:100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    color:#001f3f;
+    font-weight: bold;
+    font-family:Arial, sans-serif;
+    font-size:20px;
+}
+#frame_body{
+    top:80px;
+    position:absolute;
+    width:100%;
+    left:0px;
+    height: auto;
+    min-height:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  
+}
+.menu_item{
+    border-right-style: solid;
+    border-right-width: 2px;
+    border-right-color:white;
+    color:#001f3f;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    padding-left:10px;
+    padding-right:10px;
+    padding-top:0px;
+    background-color: #0074D9;
+    font-family: Arial, sans-serif;
+}
+.footer_list{
+    list-style:none;
+    padding-left:0px;
+}
+.vertical_line{
+    height:80%;
+    width:1px;
+    border-left-style:solid;
+    border-color:white;
+}
+.item_data{
+    padding-left:5px;
+}
+.fas fa-user-circle{
+    font-size:20px;
+}

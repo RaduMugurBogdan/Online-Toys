@@ -1,0 +1,68 @@
+.product_filter_category{
+    display:none;
+    height:0px;
+    margin-left:20px;
+    margin-top:10px;
+    flex-direction: row;
+    border-left-style:solid;
+    border-color:white;
+    border-width: 1px;
+}
+.category_title{
+    color:white;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: underline;
+}
+.category_body,.category_title{
+    padding-left: 10px;
+}
+.category_body{
+    height:auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.product_category{
+    display:inline;
+}
+.category_title{
+    height:auto;
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.checkbox_label{
+    color:white;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.filter_button{
+    height:30px;
+    width:80px;
+    font-size:20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color:#001f3f;
+    background-color:#007fff;
+    border-radius: 10px;
+    outline: none;
+    margin-top:10px;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+.filter_button:active{
+    background-color:white;
+    color:#007fff;
+}
+#filter_button_container{
+    display:none;
+    flex-direction:column;
+    justify-content: center;
+    align-content: center;
+    padding-left:10px;
+}
