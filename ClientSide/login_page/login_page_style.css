@@ -113,11 +113,22 @@ body{
 .input_box:focus{
     background-color:#001f3f;
 }
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 600px) {
     #main_container{
         width:100%;
         height:100%;
         overflow: auto;
+    }
+    .input_data_panel{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top:10px;
+        margin-bottom:10px;
+    }
+    .input_box{
+        width: 90%;
+        margin-top: 10px;
     }
     .sep_hr{
         width:60%;

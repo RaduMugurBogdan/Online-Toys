@@ -20,7 +20,8 @@ body{
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: stretch;
-    justify-content: space-between;
+    justify-content: space-between; 
+    width: 100%;
 }
 #menu{
     display:flex;
@@ -34,7 +35,7 @@ body{
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    flex-grow:1;
+    width:100%;
 }
 
 #client_options_panel{
@@ -46,7 +47,7 @@ body{
 }
 
 #search_bar{
-    width:40%;
+    width:500px;
     height:50%;
 }
 #search_button{
@@ -104,19 +105,21 @@ body{
     flex-direction: column;
 }
 #nav_details_container{
-    width:100%;
-    height:0px;
-    background-color:#001f3f;
-    transition: height,0.5s;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius:10px;
-    border-bottom-style:solid;
-    border-bottom-color:white;
-    border-bottom-width:2px;
+    padding:20px;
+    position:sticky;
+    top:80px;
+    bottom:80px;
+    width:200px;
+    border-right-style: solid;
+    border-color:white;
+    border-width: 2px;
+    height:auto;
+    color:#001f3f;
+    background-color:rgba(0,127,255,0.5);
     display:flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content:flex-start;
-    align-content: center;
+    align-content: flex-start;
     flex-wrap: wrap;
 }
 
@@ -124,6 +127,7 @@ body{
     background-image:url('../resurse/wallpaper.png');
     background-repeat: no-repeat;
     background-size:100% 100%;
+    background-attachment: fixed;
     width:80%;
     height: auto;
     min-height: 10%;
@@ -134,13 +138,12 @@ body{
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     box-shadow: 10px 10px 30px;
 }
 #frame_footer{
     width:100%;
-    height: auto;
-    max-height:300px;
+    height:300px;
     background-color:#007fff;
     margin-bottom: 0px;
     display:flex;
@@ -210,3 +213,94 @@ body{
 .fas fa-user-circle{
     font-size:20px;
 }
+
+@media only screen and (max-width: 1000px) {
+    #nav_details_container{
+        flex-direction: column;
+        height:auto;
+        display:none;
+    }
+    #nav_frame_container{
+        position:sticky;
+        top:0px;
+    }
+    #frame_nav{
+        flex-direction: column;
+        height:auto;
+        justify-content: flex-start;
+        align-content: flex-start;
+        align-items: center;
+        
+    }
+    #searching_panel{
+        width:100%;
+        height:auto;
+        order:2;
+    }
+    #search_bar{
+        height:100%;
+        width:100%;
+    }
+    #frame_body{
+        top:120px;
+    }
+    
+    #menu{
+        margin-bottom:5px;
+        width:100%;
+        height:25px;
+        justify-content: center;
+        border-bottom-style:solid;
+        border-color: white;
+        border-width:1px;
+        order:1;
+    }
+    .menu_item{
+        border-left-style: solid;
+        border-right-style:solid;
+        border-color:white;
+        border-width: 1px;
+        background-color:#007fff;
+        flex-grow: 1;
+    }
+    #client_options_panel{
+        order:2;
+        margin-bottom: 5px;
+    }
+    .item_data,.fas{
+        font-size:15px;
+    }
+    .footer_title{
+        font-size:15px;
+    }
+    #frame_footer{
+        flex-direction: column;
+        height:auto;
+    }
+    .footer_sub_container{
+        margin-top:10px;
+        margin-bottom:10px;
+    }
+    .footer_title{
+        text-align: center;
+    }
+    .vertical_line{
+        height:2px;
+        width:80%;
+        background-color: white;
+    }
+    #frame_content{
+        width:100%;
+    }
+}
+
+/*
+*{
+    border-style:solid;
+    border-color:white;
+    border-width: 2px;
+}
+*/
+
+
+ 

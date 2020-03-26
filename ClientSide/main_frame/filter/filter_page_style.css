@@ -1,15 +1,13 @@
 .product_filter_category{
-    display:none;
-    height:0px;
-    margin-left:20px;
-    margin-top:10px;
-    flex-direction: row;
+    margin-left:10px;
+    margin-top: 10px;
+    display:flex;
+    flex-direction:column;
     border-left-style:solid;
     border-color:white;
     border-width: 1px;
 }
 .category_title{
-    color:white;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: underline;
@@ -39,9 +37,9 @@
 }
 
 .filter_button{
-    height:30px;
-    width:80px;
+    height:50px;
     font-size:20px;
+    width:auto;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     color:#001f3f;
@@ -60,7 +58,6 @@
     color:#007fff;
 }
 #filter_button_container{
-    display:none;
     flex-direction:column;
     justify-content: center;
     align-content: center;
