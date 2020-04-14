@@ -1,0 +1,262 @@
+body{
+    background-image:url('../Images/admintoys-wallpaper.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+}
+
+.lng-meniu{
+    background-color: darkred;
+    height: 100%;
+    width: 15%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.lng-meniu a{
+    padding: 13px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    display: block;
+}
+
+.lng-meniu img{
+    width: 30px;
+    height: 30px;
+}
+
+#lng-account{
+    position: absolute;
+    bottom: 2%;
+}
+
+a span{
+    position: relative;
+    top: 10px;
+    padding: 10px;
+}
+
+a:hover{
+    color: lightcoral;
+}
+
+#lng-formular{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 18%;
+    right: 0;
+    display: grid;
+    overflow-y: auto;
+    grid-template-columns: 10% 30%;
+    grid-template-rows: 40% 10% 10% 10% 10% 10% 10% 10%;
+    gap: 10px;
+}
+
+#lng-img-produs{
+    position: absolute;
+    top: 2%;
+    width: 350px;
+    height: 350px;
+    border-radius: 5px;
+    background-color: darkred;
+    border-style: outset;
+    display: flex;
+    justify-content: center;
+    grid-column: 1/3;
+    grid-row: 1;
+}
+
+.lng-label-input{
+    display: inline-block;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-style: outset;
+    border-radius: 5px;
+    font-size: 24px;
+    color: white;
+}
+
+input[type="file"]{
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    width: 15%;
+}
+
+#lng-nume{
+    grid-column: 1;
+    grid-row: 2;
+    display: inline-block;
+    height: 30px;
+    width: 100px;
+    align-self: center;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border-style: outset;
+    background-color: darkred;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+}
+
+#lng-input-nume{
+    display: inline-block;
+    height: 30px;
+    align-self: center;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border-style: outset;
+    background-color: lightsalmon;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+}
+
+#lng-producator{
+    display: inline-block;
+    height: 30px;
+    width: 100px;
+    align-self: center;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border-style: outset;
+    background-color: darkred;
+    font-size: 23px;
+    color: white;
+    text-align: center;
+}
+
+#lng-input-producator{
+    display: inline-block;
+    height: 30px;
+    align-self: center;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border-style: outset;
+    background-color: lightsalmon;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+}
+
+#lng-material{
+    display: inline-block;
+    height: 30px;
+    width: 100px;
+    align-self: center;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border-style: outset;
+    background-color: darkred;
+    font-size: 23px;
+    color: white;
+    text-align: center;
+}
+
+#lng-input-material{
+    display: inline-block;
+    height: 30px;
+    align-self: center;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border-style: outset;
+    background-color: lightsalmon;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+}
+
+#lng-mod-functionare{
+    display: inline-block;
+    height: 30px;
+    width: 100px;
+    align-self: center;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border-style: outset;
+    background-color: darkred;
+    font-size: 17px;
+    color: white;
+    text-align: center;
+}
+
+#lng-input-functionare{
+    display: inline-block;
+    height: 50px;
+    align-self: center;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border-style: outset;
+    background-color: lightsalmon;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+}
+
+#lng-varsta{
+    display: inline-block;
+    height: 30px;
+    width: 100px;
+    align-self: center;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border-style: outset;
+    background-color: darkred;
+    font-size: 23px;
+    color: white;
+    text-align: center;
+}
+
+#lng-input-varsta{
+    display: inline-block;
+    height: 50px;
+    align-self: center;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border-style: outset;
+    background-color: lightsalmon;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+}
+
+#lng-destinatar{
+    display: inline-block;
+    height: 30px;
+    width: 100px;
+    align-self: center;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border-style: outset;
+    background-color: darkred;
+    font-size: 23px;
+    color: white;
+    text-align: center;
+}
+
+#lng-input-destinatar{
+    display: inline-block;
+    height: 50px;
+    align-self: center;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border-style: outset;
+    background-color: lightsalmon;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+}
+
+#lng-btn{
+    grid-column: 1/3;
+    height: 50%;
+    align-self: center;
+    border-radius: 10px;
+    border-style: outset;
+    background-color: darkred;
+    font-size: 20px;
+    color: white;
+}
