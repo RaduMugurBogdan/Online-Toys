@@ -7,6 +7,8 @@ body{
     background-color:rgb(240,255,240);
     height:60px;
     box-shadow: white 5px 0px 5px;
+    border-bottom-style:solid;
+    border-color:lightblue;
     display:flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -41,7 +43,7 @@ body{
     color:rgb(30,144,255);
     height:50%;
     width:100px;
-    margin-left:1%;
+    margin-left:5px;
     width:auto;
     height:auto;
     background-color:transparent;
@@ -85,9 +87,9 @@ body{
 
 #nav_frame_container{
     position:fixed;
+    width: 100%;
     min-height:70px;
     height: auto;
-    width:100%;
     z-index:10;
     top:0px;
     left:0px;
@@ -196,17 +198,12 @@ body{
 }
 @media only screen and (max-width: 1000px) {
     
-    #nav_frame_container{
-        position:sticky;
-        top:0px;
-    }
     #frame_nav{
         flex-direction: column;
         height:auto;
         justify-content: flex-start;
         align-content: flex-start;
         align-items: center;
-        
     }
     #searching_panel{
         width:80%;
@@ -220,11 +217,10 @@ body{
     #frame_body{
         top:120px;
     }
-    
     #menu{
-        margin-bottom:5px;
+        margin-top:2px;
+        margin-bottom:2px;
         width:100%;
-        height:25px;
         justify-content: center;
         border-bottom-style:solid;
         border-color: white;
@@ -269,7 +265,35 @@ body{
     right:50px;
     top:0px;
 }
+#logo_text{
+    font-size:25px;
+    font-weight: bold;
+    font-family: 'Comic Sans MS';
+    -webkit-text-fill-color: lightblue;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: blue;
+    text-decoration: underline;
+    text-decoration-color:lightblue;
+    padding-left:5px;
+}
 
+#hide_button_container{
+    display:none;
+    background-color:rgb(30,144,255);
+    color:white;
+    font-weight: bold;
+    width:100%;
+    flex-direction: row;
+    justify-content: center;
+    order:4;
+}
+#hide_button_container:active{
+    background-color:white;
+    color:rgb(30,144,255);
+}
+#hide_up_button{
+    display:none;
+}
 @media only screen and (max-width: 700px) {
     #nav_details_container{
         display:none;
@@ -288,21 +312,33 @@ body{
         flex-wrap: nowrap;
         overflow-y: auto;
     }
+    #logo_text{
+        padding-left:15px;
+        padding-right:15px;
+        justify-content: center;
+    }
+    #frame_body{
+        top:50px;
+    }
     #filter_option{
         display: inline;
     }
     #close_filter_button{
         display:inline;
     }
-   
+    .menu_item_disp,#searching_panel,#client_options_panel{
+        display:none;
+        width:300px;
+        justify-content: center;
+    }
+    #hide_button_container{
+        display:flex;
+    }
 }
-
 /*
 *{
     border-style:solid;
     border-color:black;
     border-width: 2px;
-}
-*/
+}*/
 
- 

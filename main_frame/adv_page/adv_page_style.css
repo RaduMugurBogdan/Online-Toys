@@ -38,7 +38,8 @@
 }
 .adv_text_container{
     height:auto;
-    font-size:30px;
+    text-align: center;
+    font-size:25px;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
@@ -52,6 +53,7 @@
 .picture_adv{
     max-height: 500px;
     width: 100%;
+    box-shadow: white 0px 5px 15px;
 }
 
 @media screen and (max-width: 800px) {
@@ -71,7 +73,8 @@
     }
     .adv_text_container{
         order:2;
-        font-size:20px;
+        width: 100%;
+        font-size: 15px;
     }
     .item_data,.fas{
         font-size:15px;
@@ -99,8 +102,8 @@
         margin-top:30px;
     }
   }
-
-  /*
+/*
+  
 *{
     border-style:solid;!important
     border-color:white;!important
