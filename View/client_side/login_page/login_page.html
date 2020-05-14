@@ -13,20 +13,25 @@
                 <span id="title_label">Login</span>
             </div>
             <div class="input_data_panel">
-                <div class="input_label">Username</div>
-                <input type="text" class="input_box">
+                <div class="input_label">E-mail</div>
+                <input type="text" class="input_box"  onchange="validate_email(this)" id="email_field" name="email_field">
+            </div>
+            <div class="warning_message" id="email_warning">
             </div>
             <div class="input_data_panel">
-                <div class="input_label">Password</div>
-                <input type="password" class="input_box">
+                <div class="input_label">Parola</div>
+                <input type="password" class="input_box" onfocusout="validate_password(this)" id="password_field" name="password_field">
+            </div>
+            <div class="warning_message" id="password_warning">
             </div>
             <hr class="sep_hr">
             <div id="buttons_panel">
-                <input type="button" value="Login" class="user_button">
+                <input type="button" value="Login" class="user_button" onclick="login_final_validation(this)">
                 <input type="button" value="Create Account" class="user_button">    
             </div>
         </section>
 
         <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+        <script src='../create_acc_page/create_acc.js'></script>
     </body>
 </html>

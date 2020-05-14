@@ -105,3 +105,17 @@ function final_validation(input_object){
         //perform account connection
     }
 }
+function login_final_validation(input_object){
+    let general_flag=true;
+    if(validate_email(document.getElementById("email_field"))==false && document.getElementById("email_field").value==""){
+        document.getElementById('email_warning').innerHTML="Email inexistent";
+        general_flag=false;
+    }  
+    if(validate_password(document.getElementById("password_field"))==false && document.getElementById("password_field").value==""){
+        document.getElementById("password_warning").innerHTML="Parola inexistenta";
+        general_flag=false;
+    }
+    if(general_flag==true){
+        //perform server accouunt connection request
+    }
+}
