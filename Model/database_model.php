@@ -23,6 +23,10 @@ class DatabaseModel{
         }
     }
     
+    public function get_db_conn(){
+        return $this->conn;
+    }
+
     private function init_database_conn(){
         try{
             $this->conn = new PDO('mysql:host=localhost;dbname=proiect_tw', 'root', '');
@@ -33,11 +37,10 @@ class DatabaseModel{
     }
     public function __construct(){
         $this->init_database_conn();
-        $this->check_for_login('radumugur1997@gmail.com','818574');
+        //$this->check_for_login('radumugur1997@gmail.com','818574');
     }
 }
 
 
-new DatabaseModel();
 
 ?>

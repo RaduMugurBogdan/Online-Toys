@@ -1,0 +1,134 @@
+#frame_nav{
+    background-color:rgb(240,255,240);
+    height:60px;
+    box-shadow: white 5px 0px 5px;
+    border-bottom-style:solid;
+    border-color:lightblue;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: space-between; 
+    width: 100%;
+}
+#menu{
+    display:flex;
+    flex-direction:row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+#searching_panel{
+    display:flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+}
+
+#client_options_panel{
+    display:flex;
+    flex-direction:row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: stretch;
+}
+
+#search_button{
+    color:rgb(30,144,255);
+    height:50%;
+    width:100px;
+    margin-left:5px;
+    width:auto;
+    height:auto;
+    background-color:transparent;
+    outline:none;
+    border-style:none;
+}
+#search_button:hover{
+    color:blue;
+}
+
+.fas fa-user-circle{
+    font-size:20px;
+}
+
+#search_bar{
+    width:50%;
+    max-width:500px;
+    height:50%;
+    outline: none;
+    border-style:solid;
+    border-width: 2px;
+    border-radius: 5px;
+    border-color: lightblue;
+    color:rgb(30,144,255);
+    font-weight:bold;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.client_item{
+    color:rgb(30,144,255);
+    font-weight: bold;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    padding-left:10px;
+    padding-right:10px;
+    padding-top:0px;
+    font-family: Arial, sans-serif;
+}
+.client_item:hover{
+    color:blue;
+}
+
+.menu_item{
+    color:rgb(30,144,255);
+    font-weight: bold;
+    font-size:15px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    padding-left:10px;
+    padding-right:10px;
+    background-color:transparent;
+    font-family: Arial, sans-serif;
+}
+
+#nav_frame_container{
+    position:fixed;
+    width: 100%;
+    min-height:70px;
+    height: auto;
+    z-index:10;
+    top:0px;
+    left:0px;
+    display:flex;
+    flex-direction: column;
+}
+
+#close_filter_button{
+    display:none;
+    position: absolute;
+    z-index:11;
+    right:50px;
+    top:0px;
+}
+
+
+#logo_text{
+    font-size:25px;
+    font-weight: bold;
+    font-family: 'Comic Sans MS';
+    -webkit-text-fill-color: lightblue;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: blue;
+    text-decoration: underline;
+    text-decoration-color:lightblue;
+    padding-left:5px;
+}

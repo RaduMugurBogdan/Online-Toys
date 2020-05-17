@@ -1,0 +1,124 @@
+
+@media only screen and (max-width: 1000px) {
+    
+    #frame_nav{
+        flex-direction: column;
+        height:auto;
+        justify-content: flex-start;
+        align-content: flex-start;
+        align-items: center;
+    }
+    #searching_panel{
+        width:80%;
+        height:auto;
+        order:2;
+    }
+    #search_bar{
+        height:100%;
+        width:100%;
+    }
+    #frame_body{
+        top:120px;
+    }
+    #menu{
+        margin-top:2px;
+        margin-bottom:2px;
+        width:100%;
+        justify-content: center;
+        border-bottom-style:solid;
+        border-color: white;
+        border-width:1px;
+        order:1;
+    }
+    
+    #client_options_panel{
+        order:2;
+        margin-bottom: 5px;
+    }
+    .item_data,.fas{
+        font-size:15px;
+    }
+    .footer_title{
+        font-size:15px;
+    }
+    #frame_footer{
+        flex-direction: column;
+        height:auto;
+    }
+    .footer_sub_container{
+        margin-top:10px;
+        margin-bottom:10px;
+    }
+    .footer_title{
+        text-align: center;
+    }
+    .vertical_line{
+        height:2px;
+        width:80%;
+        background-color:white;
+    }
+    #frame_content{
+        width:100%;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    #nav_details_container{
+        display:none;
+        flex-direction: column;
+        height:100%;
+        width:100%;
+        left:0px;
+        top:0px;
+        left:0px;
+        position: fixed;
+        z-index:10;
+        background-color: #007fff;
+        justify-content: flex-start;
+        align-items: flex-start;
+        align-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-y: auto;
+    }
+    #logo_text{
+        padding-left:15px;
+        padding-right:15px;
+        justify-content: center;
+    }
+    #frame_body{
+        top:50px;
+    }
+    #filter_option{
+        display: inline;
+    }
+    #close_filter_button{
+        display:inline;
+    }
+    .menu_item_disp,#searching_panel,#client_options_panel{
+        display:none;
+        width:300px;
+        justify-content: center;
+    }
+    #hide_button_container{
+        display:flex;
+    }
+}
+
+
+@media only screen and (max-width: 700px) {
+    #frame_body{
+        overflow: hidden;
+    }
+    #flter_option{
+        display: inline;
+    }
+    
+    .product_filter_category{
+        border-left-style:none;
+        border-bottom-style:solid;
+        width:100%;
+        left:0px;
+        padding-bottom:10px;
+    }
+
+}
