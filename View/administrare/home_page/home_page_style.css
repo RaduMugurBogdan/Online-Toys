@@ -1,0 +1,160 @@
+body{
+    background-image:url('../resurse/admintoys-wallpaper.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+}
+
+.lng-meniu{
+    background-color: darkred;
+    height: 100%;
+    width: 15%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.lng-meniu a{
+    padding: 13px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    display: block;
+}
+
+.lng-meniu img{
+    width: 30px;
+    height: 30px;
+}
+
+#lng-account{
+    position: absolute;
+    bottom: 2%;
+}
+
+a span{
+    position: relative;
+    top: 10px;
+    padding: 10px;
+}
+
+a:hover{
+    color: lightcoral;
+}
+
+#lng-content{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 50% 50%;
+    gap: 2%;
+    position: fixed;
+    top: 2%;
+    bottom: 5%;
+    left: 18%;
+    right: 7%;
+}
+
+#lng-vanzari{
+    grid-column: 1/3;
+    grid-row:1;
+    background-color: darkred;
+    border-style: outset;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#lng-vanzari label{
+    color: white;
+    font-size: 30px;
+}
+
+#lng-vanzari img{
+    width: 80%;
+    height: 90%;
+}
+
+#lng-comenzinoi{
+    grid-column: 3/5;
+    grid-row: 1;
+    background-color: darkred;
+    border-style: outset;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#lng-comenzinoi label{
+    color: white;
+    font-size: 30px;
+}
+
+#lng-comenzinoi img{
+    width: 80%;
+    height: 90%;
+}
+
+#lng-utilizatorinoi{
+    grid-column:1/2;
+    grid-row: 2;
+    background-color: darkred;
+    border-style: outset;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#lng-utilizatorinoi label{
+    color: white;
+    font-size: 30px;
+}
+
+#lng-count-users{
+    color: white;
+    font-size: 70px;
+    position: relative;
+    top: 25%;
+}
+
+#lng-produsenoi{
+    grid-column: 2/5;
+    grid-row:2;
+    background-color: darkred;
+    border-style: outset;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#lng-produsenoi label{
+    color: white;
+    font-size: 30px;
+}
+
+#lng-stoc{
+    width: 85%;
+}
+#lng-stoc, th, td{
+    border: 2px solid black;
+    border-collapse: collapse;
+    border-color: white;
+}
+
+#lng-stoc th, td{
+    padding: 5px;
+    color: white;
+    font-family: cursive;
+    text-align: center;
+}
+
+#lng-stoc th{
+    background-color: darkred;
+}
+
+#lng-stoc td{
+    background-color: lightcoral;
+}

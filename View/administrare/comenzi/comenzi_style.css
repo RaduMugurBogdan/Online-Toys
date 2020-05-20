@@ -1,0 +1,103 @@
+body{
+    background-image:url('../resurse/admintoys-wallpaper.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+}
+
+h1{
+    height: 20%;
+    font-size: 50px;
+    text-align: center;
+    color: white;
+    font-family:  cursive;
+    position: relative;
+    left: 40%;    
+}
+
+table{
+    width: 80%;
+}
+
+table, th, td {    
+    border: 2px solid black;
+    border-collapse: collapse;
+    border-color: white;
+}
+
+table{
+    position: absolute;
+    top: 20%;
+    bottom: 0;
+    left: 10%;
+    right: 50%;
+}
+
+th, td{
+    padding: 15px;
+    color: white;
+    font-family: cursive;
+    text-align: center;
+}
+
+th{
+    background-color: darkred;
+}
+
+td{
+    background-color: lightcoral;
+}
+
+.lng-btn{
+    border-radius: 10px;
+    border-style: outset;
+    background-color: darkred;
+    width: auto;
+    font-size: 20px;
+    color: white;
+}
+
+.lng-meniu{
+    background-color: darkred;
+    height: 100%;
+    width: 15%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.lng-meniu a{
+    padding: 13px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    display: block;
+}
+
+.lng-meniu img{
+    width: 30px;
+    height: 30px;
+}
+
+#lng-account{
+    position: absolute;
+    bottom: 2%;
+}
+
+a span{
+    position: relative;
+    top: 10px;
+    padding: 10px;
+}
+
+a:hover{
+    color: lightcoral;
+}
+
+#lng-content{
+    position: fixed;
+    top: 2%;
+    bottom: 5%;
+    left: 18%;
+    right: 7%;
+}
