@@ -1,3 +1,16 @@
+#nav_details_container{
+    padding:20px;
+    bottom:80px;
+    width:200px;
+    border-width: 2px;
+    color:rgb(30,144,255);
+    background-color:rgba(240,255,240,0.2);
+    display:flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-content: flex-start;
+}
+
 .product_filter_category{
     margin-left:10px;
     margin-top: 10px;
@@ -58,7 +71,6 @@
     flex-direction: row;
 }
 .filter_button{
-   
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     background-color:rgb(30,144,255);
@@ -100,24 +112,6 @@
     margin-top: 10px;
 }
 #filter_option{
-    display:none;
-}
-
-#hide_button_container{
-    display:none;
-    background-color:rgb(30,144,255);
-    color:white;
-    font-weight: bold;
-    width:100%;
-    flex-direction: row;
-    justify-content: center;
-    order:4;
-}
-#hide_button_container:active{
-    background-color:white;
-    color:rgb(30,144,255);
-}
-#hide_up_button{
     display:none;
 }
 

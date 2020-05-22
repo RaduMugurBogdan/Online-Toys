@@ -41,7 +41,7 @@ function valid_password_conf(){
 function valid_county(){
     document.getElementById('county_error').innerHTML="";
     var county_value=document.getElementById("input_county").value;
-    if(county_value.toUpperCase()=="CHOOSE"){
+    if(county_value.toUpperCase().localeCompare("CHOOSE")==0){
         document.getElementById('county_error').innerHTML="County required";
         return false;
     }
@@ -52,7 +52,7 @@ function valid_county(){
 function valid_town(){
     document.getElementById('town_error').innerHTML="";
     var town_value=document.getElementById('input_town').value;
-    if(town_value===""){
+    if(town_value.toUpperCase().localeCompare("CHOOSE")==0){
         document.getElementById('town_error').innerHTML="Town name is required";
         return false;
     } 
@@ -91,18 +91,8 @@ function valid_phone_number(){
 }
 
 
-function valid_postal_code(){
-    document.getElementById('postal_code_error').innerHTML="";
-    var first_name_value=document.getElementById('input_postal_code').value;
-    if(first_name_value===""){
-        document.getElementById('postal_code_error').innerHTML="Postal code required";
-        return false;
-    }
-    return true;
-}
-
 function validate_inputs(){
-    if(valid_email() & valid_password() & valid_first_name() & valid_last_name() & valid_password_conf() & valid_phone_number() & valid_county() & valid_town() & valid_postal_code()){
+    if(valid_email() & valid_password() & valid_first_name() & valid_last_name() & valid_password_conf() & valid_phone_number() & valid_county() & valid_town()){
         return true;
     }
     return false;
@@ -111,5 +101,35 @@ function validate_inputs(){
 function perform_request(){
     if(validate_inputs()){
         document.getElementById("main_container").submit();
+    }
+}
+
+
+
+/********************************************************************/
+
+
+function get_counties(input_object){
+    var xhttp = new XMLHttpRequest();
+    document.getElementById("input_town").innerHTML="<option selected>Choose</option>";
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("input_county").innerHTML = this.responseText;
+        }
+    };
+    xhttp.open("GET", "http://localhost/ProiectTW/Online-Toys/Model/account_model.php?action=get_counties_api", true);
+    xhttp.send();
+} 
+
+function change_county(input_object){
+    if(input_object.value.localeCompare("Choose")!=0){
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("input_town").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", "http://localhost/ProiectTW/Online-Toys/Model/account_model.php?action=get_towns_api&town_name="+input_object.value, true);
+        xhttp.send();
     }
 }

@@ -5,9 +5,13 @@ $path= explode("/",$request);
 
 switch ($path[3]) {
     case '' : 
-        include './View/client_side/main_frame/frame.php';
+        include './View/client_side/adv_page/adv_page.php';
         break;
-    case 'home' ://pagina de index
+    case 'home':{
+        include './View/client_side/adv_page/adv_page.php';
+        break;
+    }
+    case 'products' ://pagina de index
         include './View/client_side/main_frame/frame.php';
         break;
     case 'login': //proces de login

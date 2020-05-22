@@ -6,8 +6,6 @@
         <title>Main Frame</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./View/client_side/main_frame/frame_style.css">
-        <link rel="stylesheet" href="./View/client_side/product_mini_view/pmv_style.css">
         <?php
             include './View/client_side/Components/imports/main_frame_imports.php';
         ?>
@@ -190,8 +188,6 @@
                     </section>
         
                 </section> 
-
-
 
                 <!--
 

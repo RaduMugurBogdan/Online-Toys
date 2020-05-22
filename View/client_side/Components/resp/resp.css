@@ -1,12 +1,15 @@
 
 @media only screen and (max-width: 1000px) {
-    
     #frame_nav{
         flex-direction: column;
         height:auto;
         justify-content: flex-start;
         align-content: flex-start;
         align-items: center;
+    }
+    
+    #products_container{
+        border-style:none;
     }
     #searching_panel{
         width:80%;
@@ -29,8 +32,7 @@
         border-color: white;
         border-width:1px;
         order:1;
-    }
-    
+    }    
     #client_options_panel{
         order:2;
         margin-bottom: 5px;
@@ -60,25 +62,32 @@
     #frame_content{
         width:100%;
     }
+    #filter_option{
+        display: inline;
+    }
 }
 
 @media only screen and (max-width: 700px) {
     #nav_details_container{
         display:none;
-        flex-direction: column;
+        position: fixed;
+        flex-direction:column;
         height:100%;
         width:100%;
         left:0px;
         top:0px;
         left:0px;
-        position: fixed;
-        z-index:10;
+        z-index:15;
         background-color: #007fff;
         justify-content: flex-start;
         align-items: flex-start;
         align-content: flex-start;
         flex-wrap: nowrap;
         overflow-y: auto;
+    }
+    
+    #products_container{
+        border-style:none;
     }
     #logo_text{
         padding-left:15px;
@@ -87,6 +96,7 @@
     }
     #frame_body{
         top:50px;
+        overflow: hidden;
     }
     #filter_option{
         display: inline;
@@ -101,24 +111,33 @@
     }
     #hide_button_container{
         display:flex;
-    }
-}
-
-
-@media only screen and (max-width: 700px) {
-    #frame_body{
-        overflow: hidden;
-    }
-    #flter_option{
-        display: inline;
-    }
-    
+    }  
     .product_filter_category{
-        border-left-style:none;
-        border-bottom-style:solid;
         width:100%;
         left:0px;
         padding-bottom:10px;
     }
+}
 
+@media only screen and (max-width: 700px) {
+    #nav_details_container{
+        display:none;
+     
+    }
+    
+    #products_container{
+        border-style:solid;
+    }
+       
+}
+
+@media only screen and (max-width: 1000px) {
+    #nav_details_container{
+        display:none;
+     
+    }
+    #products_container{
+        border-style:solid;
+    }
+       
 }
