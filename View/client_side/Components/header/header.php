@@ -32,7 +32,7 @@
                 </section>
                 <section id="client_options_panel">
                     <?php
-                        if($path[3]==='products'){
+                        if(isset($path[3]) && $path[3]==='products'){
                             echo '<section class="client_item" id="filter_option" onclick="show_filter_menu()"><i class="fa fa-filter" style="font-size:30px"></i></section>';
                         }
                     ?>

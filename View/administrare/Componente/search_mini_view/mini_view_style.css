@@ -1,0 +1,23 @@
+
+#table_header{
+    background-color: lightblue;
+    font-weight: bold;
+}
+
+#results_table{
+    border-collapse: collapse;
+    width:99%;
+}
+table,td{
+    border-style: solid;
+    border-color:white;
+    border-width: 2px;
+    color:black;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.record_row{
+    display:none;
+}

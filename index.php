@@ -23,6 +23,8 @@ switch ($path[3]) {
         new AccountController('create_account');
         break;
     case 'account_config': //modificare cont(postari proprii,lista de favorite,modificare date de contact si date credentiale)
+        include './Controller/ClientController/account_controller.php';
+        new AccountController('account_config');
         break;    
     break;
     case 'visit_page': //pagina de vizita a unui client

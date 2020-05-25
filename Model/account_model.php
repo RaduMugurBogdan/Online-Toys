@@ -30,12 +30,12 @@ class AccountModel{
             $_SESSION['pass_error']="The password is wrong";
         }else{
             $_SESSION['log_email']=$result['EMAIL'];
-            $_SESSION['log_phone']=$result['PHONE'];
+            $_SESSION['log_phone']=$result['TELEFON'];
             $_SESSION['log_user_first_name']=$result['PRENUME'];
             $_SESSION['log_user_last_name']=$result['NUME'];
-            $_SESSION['log_county']=$result['JUDET'];
-            $_SESSION['log_town']=$result['LOCALITATE'];
-            $_SESSION['log_details']=$result['DETALII'];
+            $_SESSION['log_county']=$result['judet'];
+            $_SESSION['log_town']=$result['localitate'];
+            $_SESSION['log_details']=$result['detalii'];
             return true;
         }
         $_SESSION['email_value']=$email;
@@ -127,6 +127,96 @@ class AccountModel{
             return true;
         }
     }
+    public function get_users_data(){
+        if($this->conn==null){
+            return null;
+        }
+        
+        unset($_SESSION['users_filter_result']);
+        
+        unset($_SESSION['users_filter_email']);
+        unset($_SESSION['users_filter_first_name']);
+        unset($_SESSION['users_filter_last_name']);
+        unset($_SESSION['users_filter_phone']);
+        unset($_SESSION['users_filter_county']);
+        unset($_SESSION['users_filter_town']);
+
+        $query="SELECT * FROM USERS_TABLE";
+        $email_filter="";
+        if(!empty($_POST['email'])){
+            $email=$_POST['email']; 
+            $email_filter="EMAIL='${email}'";
+            $_SESSION['users_filter_email']=$email;
+        }
+        $fst_name_filter="";
+        if(!empty($_POST['first_name'])){
+            $fst_name=$_POST['first_name']; 
+            $fst_name_filter="PRENUME='${fst_name}'";
+            $_SESSION['users_filter_first_name']=$fst_name;
+        }
+        
+        $last_name_filter="";
+        if(!empty($_POST['last_name'])){
+            $last_name=$_POST['last_name']; 
+            $last_name_filter="NUME='${last_name}'";
+            $_SESSION['users_filter_last_name']=$last_name;
+        }
+        
+        $phone_filter="";
+        if(!empty($_POST['phone'])){
+            $phone=$_POST['phone']; 
+            $phone_filter="TELEFON='${phone}'";
+            $_SESSION['users_filter_phone']=$phone;
+        }
+
+        $county_filter="";
+        if(!empty($_POST['county']) && strtoupper($_POST['county'])!=="CHOOSE"){
+            $county=$_POST['county']; 
+            $county_filter="judet='${county}'";
+            $_SESSION['users_filter_county']=$county;
+        }
+        
+        $town_filter="";
+        if(!empty($_POST['town']) && strtoupper($_POST['town'])!=="CHOOSE"){
+            $town=$_POST['town']; 
+            $town_filter="localitate='${town}'";
+            $_SESSION['users_filter_town']=$town;
+        }
+        $filter_array=array($email_filter,$fst_name_filter,$last_name_filter,$phone_filter,$county_filter,$town_filter);
+        $concat_result="";
+        for($i=0;$i<count($filter_array);$i++){
+            $concat_result.=$filter_array[$i];
+        }
+        if($concat_result!==""){
+            $query.=" WHERE ";
+            $first_condition=false;
+            for($i=0;$i<count($filter_array);$i++){
+                if($filter_array[$i]!==""){
+                    if($first_condition==false){    
+                        $val=$filter_array[$i];
+                        $query.=" ${val} ";
+                        $first_condition=true;
+                    }else{
+                        $val=$filter_array[$i];
+                        $query.=" AND ${val} ";
+                    }
+                }
+            }
+        }   
+
+        $stmt=$this->conn->query($query);
+        $result=$stmt->fetchAll(PDO::FETCH_ASSOC);
+        if($result!=false){
+            $_SESSION['users_filter_result']=$result;
+        }
+
+        header('Location:../View/administrare/Utilizatori/utilizatori.php');
+        exit;
+    }
+
+
+
+
     public function get_counties_api(){
         if($this->conn==null){
             echo exit();
@@ -191,6 +281,13 @@ class AccountModel{
             }
         }
     }
+    public function perform_log_out(){
+        if(isset($_SESSION)){
+            session_destroy();
+        }
+        header("Location:http://localhost/ProiectTW/Online-Toys/home");
+        exit;
+    }
     public function perform_account_creation(){
         if($this->check_valid_account()){
             header("Location:http://localhost/ProiectTW/Online-Toys/home");
@@ -229,6 +326,14 @@ if(isset($_GET['action'])){
             if(isset($_GET['town_name'])){
                 $aux_acc->get_towns_api($_GET['town_name']);
             }
+            break;
+        }
+        case 'get_user_data':{
+            $aux_acc->get_users_data();
+            break;
+        }
+        case 'perform_log_out':{
+            $aux_acc->perform_log_out();
             break;
         }
         default:{
