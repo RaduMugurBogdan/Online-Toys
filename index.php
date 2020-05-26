@@ -27,7 +27,8 @@ switch ($path[3]) {
         new AccountController('account_config');
         break;    
     break;
-    case 'visit_page': //pagina de vizita a unui client
+    case 'product_page': 
+        include './View/client_side/product_page_view/product_page_view.php';
         break;
     case 'favorite':
         break;

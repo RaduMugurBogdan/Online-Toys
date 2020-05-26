@@ -1,0 +1,229 @@
+body{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#product_pres_container{
+    width:1500px;
+    height:800px;
+    margin-top:80px;
+    display:flex;
+    flex-direction: row;
+    box-shadow: 1px 0px 15px black;
+}
+#product_pictures_panel{
+    width:1000px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 1px 15px black;
+}
+#picture_counter{
+    font-size:20px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color:rgb(0,127,255);
+}
+#picture_panel{
+    height:700px;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#buttons_list_panel{
+    border-top-style:solid;
+    border-width: 1px;
+    height:100px;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+i.fa{
+    font-size:25px;
+    font-weight: bold;
+    margin-left:20px;
+    margin-right:20px;
+    color:rgb(0,127,255);   
+}
+i.fa:active{
+    color:lightblue;
+}
+
+#product_info_panel{
+    padding-top: 20px;
+    width: 500px;
+    display:flex;
+    flex-direction: column;
+    align-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#product_name_panel{
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+.del_line{
+    color:black;
+    width: 100%;;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.fav_button{
+    width: 200px;
+    height: 40px;
+    margin-top:10px;
+    outline:none;
+    border-style:solid;
+    border-color:dodgerblue;
+    border-radius: 5px;
+    background-color:deepskyblue;
+    color:white;
+    font-weight: bold;
+    font-size:15px;
+}
+.fav_button:hover{
+    background-color:dodgerblue;
+}
+.fav_button:disabled{
+    background-color:gray;
+}
+
+#fav_button_panel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#price_container{
+    text-align: center;
+    margin-top: 50px;
+}
+#price_value{
+    font-size:50px;
+    font-weight: bold;
+    color:red;
+}
+#price_label{
+    font-size:60px;
+}
+#contacts_panel{
+    text-align: center;
+}
+#price_label{
+    font-size:20px;
+}
+
+.info_label{
+    font-size: 15px;
+    font-weight: bold;
+
+}
+.info_container{
+    margin-top:10px;
+}
+
+
+#product_info_container{
+    background-color: rgb(0,127,255);
+    color:white;
+    width:1500px;
+    height:auto;
+    box-shadow: 0px 0px 10px black;
+    margin-top:50px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-top:10px;
+    padding-bottom:10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.info_section{
+    display: flex;
+    flex-direction: column;
+}
+.title_label{
+    font-size:25px;
+    margin-bottom: 10px;
+}
+.info_data_container{
+    display:flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    width: 800px;
+    margin-top:20px;
+    margin-bottom:20px;
+}
+.info_item{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-left:50px;
+}
+.info_title,.info_value{
+    width:300px;
+}
+.info_title{
+    font-weight: bold;
+}
+.info_del_line{
+    font-size:1px;
+    color:black;
+    margin-top:5px;
+    margin-bottom:5px;
+    width:80%;
+}
+.car_picture{
+    width:90%;
+    height:90%;
+    display:none;
+}
+.product_picture{
+    max-width:90%;
+    max-height: 90%;
+}
+/*
+*{
+    border-style:solid;
+    border-color: black;
+    border-width: 1px;
+}*/
+
+
+
+
+@media only screen and (max-width: 1500px) {
+    #product_pres_container{
+        flex-direction: column;
+        height:auto;
+        justify-content: center;
+        align-content: center;
+        width:100%;
+    }
+    #product_pictures_panel{
+        width: 100%;
+        padding-top:5px;
+        padding-bottom:5px;
+        height:auto;
+    }
+    #product_info_panel{ 
+        margin-top:10px;
+        display:flex;
+        align-self: center;
+        width:100%;
+       
+    }
+    .del_line{
+        width: 100%;
+    }
+    #picture_panel{
+        height:auto;
+    }
+    #product_info_container{
+        width:100%; 
+    }
+}
+ 
