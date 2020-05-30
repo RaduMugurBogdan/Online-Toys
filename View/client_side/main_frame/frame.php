@@ -10,7 +10,7 @@
             include './View/client_side/Components/imports/main_frame_imports.php';
         ?>
     </head>
-    <body>
+    <body onload="init_page()">
         <?php
             include './View/client_side/Components/header/header.php';
         ?>
@@ -182,9 +182,9 @@
                     </section>
         
                     <section id="page_buttons_panel">
-                            <button class="page_buttons"><i class="fa fa-arrow-circle-left" style="font-size:30px"></i></button>
-                            <span id="page_label">Page 1/<sub>100</sub> </span>
-                            <button class="page_buttons"><i class="fa fa-arrow-circle-right" style="font-size:30px"></i></button>
+                            <button class="page_buttons" onclick="get_preview_page()"><i class="fa fa-arrow-circle-left" style="font-size:30px"></i></button>
+                            <span id="page_label">Page<span id="curent_page"></span>/<sub id="pages_number"></sub> </span>
+                            <button class="page_buttons" onclick="get_next_page()"><i class="fa fa-arrow-circle-right" style="font-size:30px"></i></button>
                     </section>
         
                 </section> 
@@ -200,6 +200,8 @@
             ?>
         </section>  
         <script type="text/javascript" src="./View/client_side/main_frame/main_frame_script.js">
+        </script> 
+        <script type="text/javascript" src="./View/client_side/main_frame/pages_view.js">
         </script>
         <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     </body>

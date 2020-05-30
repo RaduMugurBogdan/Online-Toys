@@ -87,7 +87,7 @@
     margin-left:5px;
     margin-right:5px;
     margin-bottom:5px;
-    display:flex;
+    display:none;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content:center;

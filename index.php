@@ -3,6 +3,7 @@
 $request = $_SERVER['REQUEST_URI'];
 $path= explode("/",$request);
 
+
 switch ($path[3]) {
     case '' : 
         include './View/client_side/adv_page/adv_page.php';
@@ -32,6 +33,18 @@ switch ($path[3]) {
         break;
     case 'favorite':
         break;
+    case 'admin':{
+        include './View/administrare/admin_brand_category/admin_bc.php';
+        break;
+        
+        /*if(isset($path[4])){
+            switch($path[4]){
+                case 'produse':{
+                   
+                }
+            }
+        }*/
+    }
     default:
         //header("Location:".$request);
     break;
