@@ -34,16 +34,9 @@ switch ($path[3]) {
     case 'favorite':
         break;
     case 'admin':{
-        include './View/administrare/admin_brand_category/admin_bc.php';
-        break;
-        
-        /*if(isset($path[4])){
-            switch($path[4]){
-                case 'produse':{
-                   
-                }
-            }
-        }*/
+        //include './View/administrare/admin_brand_category/admin_bc.php';
+        include './View/administrare/adaugare_produs2/add_prod.php';
+        break;   
     }
     default:
         //header("Location:".$request);
