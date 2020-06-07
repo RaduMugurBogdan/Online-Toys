@@ -37,10 +37,10 @@
                         }
                     ?>
                     <section class="client_item" >
-                        <a href="http://localhost/ProiectTW/Online-Toys/account_config?action=favorite"><i class='fas fa-star' style='font-size:30px'></i></a> 
+                        <a href="http://localhost/ProiectTW/Online-Toys/account_config?target=favorite"><i class='fas fa-star' style='font-size:30px'></i></a> 
                     </section>
                     <section class="client_item" >
-                        <a href="http://localhost/ProiectTW/Online-Toys/account_config?action=chart"><i class='fas fa-shopping-cart' style='font-size:30px'></i></a>  
+                        <a href="http://localhost/ProiectTW/Online-Toys/account_config?target=chart"><i class='fas fa-shopping-cart' style='font-size:30px'></i></a>  
                     </section>
                     <section class="client_item" >
                         <a href="<?php echo $user_action;?>"><i class='fas fa-user-circle' style='font-size:30px'></i></a>    

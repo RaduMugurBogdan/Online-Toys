@@ -8,6 +8,7 @@ class AccountModel{
     private function check_valid_login($email,$password){
         /***********************************************/
         //variabilele necesare pentru retinerea informatiilor clientului curent
+        unset($_SESSION['log_id']);
         unset($_SESSION['log_email']);
         unset($_SESSION['log_phone']);
         unset($_SESSION['log_user_first_name']);
@@ -16,8 +17,6 @@ class AccountModel{
         unset($_SESSION['log_town']);
         unset($_SESSION['log_details']);
         /***************************************************/
-
-
         unset($_SESSION['email_error']);
         unset($_SESSION['pass_error']);
         unset($_SESSION['email_value']);
@@ -29,6 +28,7 @@ class AccountModel{
         }else if(md5($password)!==$result['password']){
             $_SESSION['pass_error']="The password is wrong";
         }else{
+            $_SESSION['log_id']=$result['ID'];
             $_SESSION['log_email']=$result['EMAIL'];
             $_SESSION['log_phone']=$result['TELEFON'];
             $_SESSION['log_user_first_name']=$result['PRENUME'];
@@ -36,6 +36,7 @@ class AccountModel{
             $_SESSION['log_county']=$result['judet'];
             $_SESSION['log_town']=$result['localitate'];
             $_SESSION['log_details']=$result['detalii'];
+            
             return true;
         }
         $_SESSION['email_value']=$email;
@@ -52,6 +53,7 @@ class AccountModel{
     private function check_valid_account(){
         /***********************************************/
         //variabilele necesare pentru retinerea informatiilor clientului curent
+        unset($_SESSION['log_id']);
         unset($_SESSION['log_email']);
         unset($_SESSION['log_phone']);
         unset($_SESSION['log_user_first_name']);
@@ -117,6 +119,7 @@ class AccountModel{
             $details=$_SESSION['user_details'];
             $query="INSERT INTO USERS_TABLE (ID,EMAIL,PASSWORD,NUME,PRENUME,TELEFON,DETALII,JUDET,LOCALITATE) VALUES (null,'${email}','${password}','${last_name}','${first_name}','${phone}','${details}','${county}','${town}')";
             $this->conn->query($query);
+            $_SESSION['log_id']=$this->conn->lastInsertedId;
             $_SESSION['log_email']=$email;
             $_SESSION['log_phone']=$phone;
             $_SESSION['log_user_first_name']=$first_name;
@@ -133,7 +136,6 @@ class AccountModel{
         }
         
         unset($_SESSION['users_filter_result']);
-        
         unset($_SESSION['users_filter_email']);
         unset($_SESSION['users_filter_first_name']);
         unset($_SESSION['users_filter_last_name']);
@@ -214,9 +216,6 @@ class AccountModel{
         exit;
     }
 
-
-
-
     public function get_counties_api(){
         if($this->conn==null){
             echo exit();
@@ -295,9 +294,89 @@ class AccountModel{
             header("Location:http://localhost/ProiectTW/Online-Toys/create_account");
         }
     }
+    public function is_fav($user_id,$product_id){
+            $query="SELECT 1 FROM FAVORITE WHERE ID_PRODUS='${product_id}' AND  ID_CLIENT='${user_id}'";
+            $stmt=$this->conn->prepare($query);
+            $stmt->execute();
+            $result=$stmt->fetchAll(PDO::FETCH_ASSOC);
+            if(empty($result)==true){
+                return false;
+            }
+            return true;
+    }
+
+    public function get_client_favorites(){
+        if(isset($_SESSION['log_id'])){
+            require_once './Model/products_model.php';
+            $pm=new ProductsModel();
+            $user_id=$_SESSION['log_id'];
+            $query="SELECT * FROM FAVORITE JOIN PRODUSE ON FAVORITE.ID_PRODUS=PRODUSE.ID JOIN POZE_PRODUSE ON PRODUSE.ID=POZE_PRODUSE.ID_PRODUS WHERE ID_CLIENT='${user_id}' GROUP BY PRODUSE.ID";
+            $stmt=$this->conn->prepare($query);
+            $stmt->execute();
+            $result=$stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+        }
+    }
+    public function delete_favorite($user_id,$fav_id){
+            $query="DELETE FROM FAVORITE WHERE ID_CLIENT='${user_id}'";
+            $stmt=$this->conn->prepare($query);
+            $stmt->execute();
+    }
+    public function insert_favorite($user_id,$fav_id){
+            $query="INSERT INTO FAVORITE(ID,ID_CLIENT,ID_PRODUS) VALUES(NULL,'${user_id}','${fav_id}')";
+            $stmt=$this->conn->prepare($query);
+            $stmt->execute();
+            $result=$stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+    }
+
+
+  
+
+    public function is_chart_item($user_id,$product_id){
+        $query="SELECT 1 FROM CHART WHERE ID_PRODUS='${product_id}' AND  ID_CLIENT='${user_id}'";
+        $stmt=$this->conn->prepare($query);
+        $stmt->execute();
+        $result=$stmt->fetchAll(PDO::FETCH_ASSOC);
+        if(empty($result)==true){
+            return false;
+        }
+        return true;
+    }
+
+    public function delete_chart_item($user_id,$fav_id){
+        $query="DELETE FROM CHART WHERE ID_CLIENT='${user_id}'";
+        $stmt=$this->conn->prepare($query);
+        $stmt->execute();
+    }
+    public function insert_chart_item($user_id,$product_id){
+            $query="INSERT INTO CHART(ID,ID_CLIENT,ID_PRODUS) VALUES(NULL,'${user_id}','${product_id}')";
+            $stmt=$this->conn->prepare($query);
+            $stmt->execute();
+            $result=$stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+    }
+    public function set_chart_empty($user_id){
+        $query="DELETE FROM CHART WHERE ID_CLIENT='${user_id}'";
+        $stmt=$this->conn->prepare($query);
+        $stmt->execute();
+    }
+
+    public function get_client_chart(){
+        if(isset($_SESSION['log_id'])){
+            require_once './Model/products_model.php';
+            $pm=new ProductsModel();
+            $user_id=$_SESSION['log_id'];
+            $query="SELECT * FROM CHART JOIN PRODUSE ON CHART.ID_PRODUS=PRODUSE.ID JOIN POZE_PRODUSE ON PRODUSE.ID=POZE_PRODUSE.ID_PRODUS WHERE ID_CLIENT='${user_id}' GROUP BY PRODUSE.ID";
+            $stmt=$this->conn->prepare($query);
+            $stmt->execute();
+            $result=$stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+        }
+    }
 
     public function __construct(){
-        include 'database_model.php';
+        require_once 'database_model.php';
         $db=new DatabaseModel();
         $this->conn=$db->get_db_conn();
     }
@@ -335,6 +414,57 @@ if(isset($_GET['action'])){
         case 'perform_log_out':{
             $aux_acc->perform_log_out();
             break;
+        }
+        case 'insert_favorite':{
+            if(isset($_GET['user_id']) && isset($_GET['product_id'])){
+                $aux_acc->insert_favorite($_GET['user_id'],$_GET['product_id']);
+                header("Location:http://localhost/ProiectTW/Online-Toys/product_page?product_id=".$_GET['product_id']);
+            }
+            break;
+        }
+        case 'delete_favorite':{
+            if(isset($_GET['user_id']) && isset($_GET['product_id'])){
+                $aux_acc->delete_favorite($_GET['user_id'],$_GET['product_id']);
+                header("Location:http://localhost/ProiectTW/Online-Toys/account_config?target=favorite");
+            }
+            break;
+        }
+        case 'exists':{
+            if(isset($_GET['user_id']) && isset($_GET['product_id'])){
+                if($aux_acc->is_fav($_GET['user_id'],$_GET['product_id'])==true){
+                    echo 'true';
+                }else{
+                    echo 'false';
+                }
+                exit;
+                //header("Location:http://localhost/ProiectTW/Online-Toys/account_config?target=favorite");
+            }
+        }
+        /*********************************************************************************** chart api */
+        case 'insert_chart':{
+            if(isset($_GET['user_id']) && isset($_GET['product_id'])){
+                $aux_acc->insert_chart_item($_GET['user_id'],$_GET['product_id']);
+                header("Location:http://localhost/ProiectTW/Online-Toys/product_page?product_id=".$_GET['product_id']);
+            }
+            break;
+        }
+        case 'delete_chart':{
+            if(isset($_GET['user_id']) && isset($_GET['product_id'])){
+                $aux_acc->delete_chart_item($_GET['user_id'],$_GET['product_id']);
+                header("Location:http://localhost/ProiectTW/Online-Toys/account_config?target=chart");
+            }
+            break;
+        }
+        case 'exists_chart':{
+            if(isset($_GET['user_id']) && isset($_GET['product_id'])){
+                if($aux_acc->is_chart_item($_GET['user_id'],$_GET['product_id'])==true){
+                    echo 'true';
+                }else{
+                    echo 'false';
+                }
+                exit;
+                //header("Location:http://localhost/ProiectTW/Online-Toys/account_config?target=favorite");
+            }
         }
         default:{
             //redirect to error page

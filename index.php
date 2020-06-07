@@ -2,6 +2,7 @@
 //url path starting from localhost
 $request = $_SERVER['REQUEST_URI'];
 $path= explode("/",$request);
+$path[3]=explode("?",$path[3])[0];
 
 
 switch ($path[3]) {
@@ -29,7 +30,8 @@ switch ($path[3]) {
         break;    
     break;
     case 'product_page': 
-        include './View/client_side/product_page_view/product_page_view.php';
+        include './Controller/ClientController/view_post_controller.php';
+        (new ViewPostController())->access_product();
         break;
     case 'favorite':
         break;

@@ -1,5 +1,5 @@
 
-<section id="nav_details_container"> 
+<form id="nav_details_container" action="./Model/filter_model.php" method="POST"> 
                     
                     <section class="filter_label_container">
                         <div class="filter_label" onclick="close_filter()"> <i class="fa fa-close" style="font-size:36px" id="close_filter_button"></i>
@@ -10,7 +10,7 @@
                     </section>
                     <section class="product_filter_category">
                         <div class="category_title">Producator</div>
-                        <select class="category_body">
+                        <select class="category_body" name="brand">
                             <option>Lego</option>
                             <option>PlaySchool</option>
                             <option>PlayMobil</option>
@@ -22,7 +22,7 @@
                     </section>
                     <section class="product_filter_category">
                         <div class="category_title">Categorie</div>
-                        <select class="category_body">
+                        <select class="category_body" name="category">
                             <option>Animal</option>
                             <option>Masina</option>
                             <option>Figurina</option>
@@ -31,7 +31,7 @@
                     </section>
                     <section class="product_filter_category">
                         <div class="category_title">Material</div>
-                        <select class="category_body">
+                        <select class="category_body" name="material">
                             <option>Plush si Textile</option>
                             <option>Plastic</option>
                             <option>Lemn</option>
@@ -41,7 +41,7 @@
                     
                     <section class="product_filter_category">
                         <div class="category_title">Mod de functionare</div>
-                        <select class="category_body">
+                        <select class="category_body" name="op_mode">
                             <option>Electrice</option>
                             <option>Mecanice</option>
                             <option>Simple</option>
@@ -49,7 +49,7 @@
                     </section>
                     <section class="product_filter_category">
                         <div class="category_title">Varsta</div>
-                        <select class="category_body">
+                        <select class="category_body" name="age_class">
                             <option>3-6 luni</option>
                             <option>6-9 luni</option>
                             <option>9-12 luni</option>
@@ -63,7 +63,7 @@
                 
                 <section class="product_filter_category">
                     <div class="category_title">Destinatari</div>
-                    <select class="category_body">
+                    <select class="category_body" name="receiver_class">
                             <option>Baieti</option>
                             <option>Fete</option>
                             <option>Unisex</option>
@@ -76,7 +76,7 @@
                         <span class="checkbox_label">Toate produsele</span> 
                     </div>
                     <div class="filter_button_panel">
-                        <button class="filter_button">
+                        <button class="filter_button" type="submit">
                             Search
                         </button>
                         <button class="filter_button">
@@ -86,7 +86,7 @@
                 </section>    
 
 
-</section>
+</form>
 
 
 

@@ -2,11 +2,29 @@
 if(!isset($_SESSION)){
     session_start();
 }
+include './Model/account_model.php';
 ?>
 <html>
     <head>
+        <style>
+            <?php
+                if(isset($_GET['target'])){
+                    
+                    if($_GET['target']=="favorite"){
+                        echo "#favorite_id{color:red;}";
+                    }
+                    if($_GET['target']=="chart"){
+                        echo "#postari_id{color:red;}";
+                    }
+                }
+
+            ?>
+        </style>
+
+
         <meta name="viewport" content="width=device-width, initial-scale=1.0" http-equiv="Content-Type" content="text/html; charset=utf-8"> 
         <link rel="stylesheet" href="./View/client_side/account_config/personal_posts_page_style.css">
+        <link rel="stylesheet" href="./View/client_side/Components/mini_personal_view/mini_personal_view.css">
         <?php
             include "./View/client_side/Components/imports/header_footer_imports.php";
         ?>
@@ -43,14 +61,76 @@ if(!isset($_SESSION)){
         </section>
         <section id="posts_container">
             <section id="posts_title_container">
-                <span class="posts_label" ><a id="postari_id" href="./personal_posts_page.php?page=postari_id">Cos</a></span>
-                <span class="posts_label" ><a id="favorite_id" href="./personal_posts_page.php?page=favorite_id">Favorite</a></span>
-                <span class="posts_label" ><a id="cont_id" href="./personal_posts_page.php?page=cont_id">Cont</a></span>
+                <span class="posts_label" ><a id="postari_id" href="http://localhost/ProiectTW/Online-Toys/account_config?target=chart">Cos</a></span>
+                <span class="posts_label" ><a id="favorite_id" href="http://localhost/ProiectTW/Online-Toys/account_config?target=favorite">Favorite</a></span>
             </section>
             <hr class="contact_del_line">
             
             <section class="user_content" id="cont_container">
-                
+
+
+
+           
+                <?php
+                    $acc=new AccountModel();
+                    if(isset($_GET['target']) && $_GET['target']=="favorite"){
+                        $results=$acc->get_client_favorites();
+                        for($i=0;$i<count($results);$i++){
+                ?>
+                    <section class="main_posts_container">
+                            <section class="post_container">
+                            <a href="http://localhost/ProiectTW/Online-Toys/product_page?product_id=<?php echo $results[$i]['id_produs'];?>">    
+                            <section class="mini_view_info">
+                                    <section class="mini_view_picture">
+                                    <img class="picture" src="data:image/jpeg;base64,<?php echo base64_encode($results[$i]['poza']);?>" />
+                                    
+                                    </section>
+                                        <section class="mini_view_labels">   
+                                            <span class="brand_name_container"><?php echo $results[$i]['brand_name'];?></span>
+                                            <span class="model_name_container"><?php echo $results[$i]['nume_produs']; ?></span> 
+                                        </section>
+                                        
+                                </section>
+                                </a>
+                                <section class="options_panel">
+                                    <section class="post_option" onclick="delete_favorite(<?php echo 'this,'.$_SESSION['log_id'];?>,<?php echo  $results[$i]['id'];?>)">Sterge</section>
+                                </section>
+                            </section>
+                    </section>
+
+
+                <?php
+                        }
+                    }else if(isset($_GET['target']) && $_GET['target']=="chart"){
+                        $results=$acc->get_client_chart();
+                        for($i=0;$i<count($results);$i++){
+                        ?>
+
+                            <section class="main_posts_container">
+                                <section class="post_container">
+                                <a href="http://localhost/ProiectTW/Online-Toys/product_page?product_id=<?php echo $results[$i]['id_produs'];?>">    
+                                <section class="mini_view_info">
+                                        <section class="mini_view_picture">
+                                        <img class="picture" src="data:image/jpeg;base64,<?php echo base64_encode($results[$i]['poza']);?>" />
+                                        
+                                        </section>
+                                            <section class="mini_view_labels">   
+                                                <span class="brand_name_container"> </span>
+                                                <span class="model_name_container"> </span> 
+                                            </section>
+                                            
+                                    </section>
+                                    </a>
+                                    <section class="options_panel">
+                                        <section class="post_option" >Sterge</section>
+                                    </section>
+                                </section>
+                            </section>
+
+                        <?php
+                        }
+                }   
+                ?>
            </section>
        </section>
     </section>
@@ -58,6 +138,8 @@ if(!isset($_SESSION)){
         include './View/client_side/Components/footer/footer.php';
     ?> 
     <script type="text/javascript" src="./View/client_side/main_frame/main_frame_script.js"></script>
+    <script type="text/javascript" src="./View/client_side/account_config/personal_posts.js"></script>
+   
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     </body>
 </html>

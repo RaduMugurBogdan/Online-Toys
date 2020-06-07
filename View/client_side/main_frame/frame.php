@@ -1,3 +1,9 @@
+<?php
+if(isset($_SESSION)==false){
+    session_start();
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -30,154 +36,25 @@
 
                 <section id="view_container">
                     <section id="products_container"> 
-                        
+                        <?php
+                        if(isset($_SESSION['filter_results'])){
+                            $results=$_SESSION['filter_results'];
+                            for($i=0;$i<count($results);$i++){
+                                ?>
                         <div class="product_mini_view">
-                            <div class="product_mini_picture"><img src="./View/client_side/resurse/car.jpg" class="product_image"></div>
-                            <div class="product_mini_description">Masina HotWheels</div>
+                            <a href="http://localhost/ProiectTW/Online-Toys/product_page?product_id=<?php echo $results[$i]['product_id'];?>">
+                            <div class="product_mini_picture"><img src="<?php echo 'data:image/jpeg;base64,'.base64_encode($results[$i]['poza']) ?>" class="product_image"></div>
+                            <div class="product_mini_description"><?php echo $results[$i]['nume_produs']; ?></div>
+                            </a>
                             <button class="add_to_chart_button"><i class='fas fa-shopping-cart add_to_chart_button_icon'></i>  Add to chart</button>
                             <hr class="view_sep">
-                            <div class="product_price_description">Pret: <span class="main_price">30</span>,<sub class="sec_price">99</sub> ron</div>
-                        </div>  
-                        <div class="product_mini_view">
-                            <div class="product_mini_picture"><img src="./View/client_side/resurse/car.jpg" class="product_image"></div>
-                            <div class="product_mini_description">Masina HotWheels</div>
-                            <button class="add_to_chart_button"><i class='fas fa-shopping-cart add_to_chart_button_icon'></i>  Add to chart</button>
-                            <hr class="view_sep">
-                            <div class="product_price_description">Pret: <span class="main_price">30</span>,<sub class="sec_price">99</sub> ron</div>
-                        </div>  
-                        <div class="product_mini_view">
-                            <div class="product_mini_picture"><img src="./View/client_side/resurse/car.jpg" class="product_image"></div>
-                            <div class="product_mini_description">Masina HotWheels</div>
-                            <button class="add_to_chart_button"><i class='fas fa-shopping-cart add_to_chart_button_icon'></i>  Add to chart</button>
-                            <hr class="view_sep">
-                            <div class="product_price_description">Pret: <span class="main_price">30</span>,<sub class="sec_price">99</sub> ron</div>
-                        </div>  
-                        <div class="product_mini_view">
-                            <div class="product_mini_picture"><img src="./View/client_side/resurse/car.jpg" class="product_image"></div>
-                            <div class="product_mini_description">Masina HotWheels</div>
-                            <button class="add_to_chart_button"><i class='fas fa-shopping-cart add_to_chart_button_icon'></i>  Add to chart</button>
-                            <hr class="view_sep">
-                            <div class="product_price_description">Pret: <span class="main_price">30</span>,<sub class="sec_price">99</sub> ron</div>
-                        </div>  
-                        <div class="product_mini_view">
-                            <div class="product_mini_picture"><img src="./View/client_side/resurse/car.jpg" class="product_image"></div>
-                            <div class="product_mini_description">Masina HotWheels</div>
-                            <button class="add_to_chart_button"><i class='fas fa-shopping-cart add_to_chart_button_icon'></i>  Add to chart</button>
-                            <hr class="view_sep">
-                            <div class="product_price_description">Pret: <span class="main_price">30</span>,<sub class="sec_price">99</sub> ron</div>
-                        </div>  
-                        <div class="product_mini_view">
-                            <div class="product_mini_picture"><img src="./View/client_side/resurse/car.jpg" class="product_image"></div>
-                            <div class="product_mini_description">Masina HotWheels</div>
-                            <button class="add_to_chart_button"><i class='fas fa-shopping-cart add_to_chart_button_icon'></i>  Add to chart</button>
-                            <hr class="view_sep">
-                            <div class="product_price_description">Pret: <span class="main_price">30</span>,<sub class="sec_price">99</sub> ron</div>
-                        </div>  
-                        <div class="product_mini_view">
-                            <div class="product_mini_picture"><img src="./View/client_side/resurse/car.jpg" class="product_image"></div>
-                            <div class="product_mini_description">Masina HotWheels</div>
-                            <button class="add_to_chart_button"><i class='fas fa-shopping-cart add_to_chart_button_icon'></i>  Add to chart</button>
-                            <hr class="view_sep">
-                            <div class="product_price_description">Pret: <span class="main_price">30</span>,<sub class="sec_price">99</sub> ron</div>
-                        </div>  
-                        <div class="product_mini_view">
-                            <div class="product_mini_picture"><img src="./View/client_side/resurse/car.jpg" class="product_image"></div>
-                            <div class="product_mini_description">Masina HotWheels</div>
-                            <button class="add_to_chart_button"><i class='fas fa-shopping-cart add_to_chart_button_icon'></i>  Add to chart</button>
-                            <hr class="view_sep">
-                            <div class="product_price_description">Pret: <span class="main_price">30</span>,<sub class="sec_price">99</sub> ron</div>
-                        </div>  
-                        <div class="product_mini_view">
-                            <div class="product_mini_picture"><img src="./View/client_side/resurse/car.jpg" class="product_image"></div>
-                            <div class="product_mini_description">Masina HotWheels</div>
-                            <button class="add_to_chart_button"><i class='fas fa-shopping-cart add_to_chart_button_icon'></i>  Add to chart</button>
-                            <hr class="view_sep">
-                            <div class="product_price_description">Pret: <span class="main_price">30</span>,<sub class="sec_price">99</sub> ron</div>
-                        </div>  
-                        <div class="product_mini_view">
-                            <div class="product_mini_picture"><img src="./View/client_side/resurse/car.jpg" class="product_image"></div>
-                            <div class="product_mini_description">Masina HotWheels</div>
-                            <button class="add_to_chart_button"><i class='fas fa-shopping-cart add_to_chart_button_icon'></i>  Add to chart</button>
-                            <hr class="view_sep">
-                            <div class="product_price_description">Pret: <span class="main_price">30</span>,<sub class="sec_price">99</sub> ron</div>
-                        </div>  
-                        <div class="product_mini_view">
-                            <div class="product_mini_picture"><img src="./View/client_side/resurse/car.jpg" class="product_image"></div>
-                            <div class="product_mini_description">Masina HotWheels</div>
-                            <button class="add_to_chart_button"><i class='fas fa-shopping-cart add_to_chart_button_icon'></i>  Add to chart</button>
-                            <hr class="view_sep">
-                            <div class="product_price_description">Pret: <span class="main_price">30</span>,<sub class="sec_price">99</sub> ron</div>
-                        </div>  
-                        <div class="product_mini_view">
-                            <div class="product_mini_picture"><img src="./View/client_side/resurse/car.jpg" class="product_image"></div>
-                            <div class="product_mini_description">Masina HotWheels</div>
-                            <button class="add_to_chart_button"><i class='fas fa-shopping-cart add_to_chart_button_icon'></i>  Add to chart</button>
-                            <hr class="view_sep">
-                            <div class="product_price_description">Pret: <span class="main_price">30</span>,<sub class="sec_price">99</sub> ron</div>
-                        </div>  
-                        <div class="product_mini_view">
-                            <div class="product_mini_picture"><img src="./View/client_side/resurse/car.jpg" class="product_image"></div>
-                            <div class="product_mini_description">Masina HotWheels</div>
-                            <button class="add_to_chart_button"><i class='fas fa-shopping-cart add_to_chart_button_icon'></i>  Add to chart</button>
-                            <hr class="view_sep">
-                            <div class="product_price_description">Pret: <span class="main_price">30</span>,<sub class="sec_price">99</sub> ron</div>
-                        </div>  
-                        <div class="product_mini_view">
-                            <div class="product_mini_picture"><img src="./View/client_side/resurse/car.jpg" class="product_image"></div>
-                            <div class="product_mini_description">Masina HotWheels</div>
-                            <button class="add_to_chart_button"><i class='fas fa-shopping-cart add_to_chart_button_icon'></i>  Add to chart</button>
-                            <hr class="view_sep">
-                            <div class="product_price_description">Pret: <span class="main_price">30</span>,<sub class="sec_price">99</sub> ron</div>
-                        </div>  
-                        <div class="product_mini_view">
-                            <div class="product_mini_picture"><img src="./View/client_side/resurse/car.jpg" class="product_image"></div>
-                            <div class="product_mini_description">Masina HotWheels</div>
-                            <button class="add_to_chart_button"><i class='fas fa-shopping-cart add_to_chart_button_icon'></i>  Add to chart</button>
-                            <hr class="view_sep">
-                            <div class="product_price_description">Pret: <span class="main_price">30</span>,<sub class="sec_price">99</sub> ron</div>
-                        </div>  
-                        <div class="product_mini_view">
-                            <div class="product_mini_picture"><img src="./View/client_side/resurse/car.jpg" class="product_image"></div>
-                            <div class="product_mini_description">Masina HotWheels</div>
-                            <button class="add_to_chart_button"><i class='fas fa-shopping-cart add_to_chart_button_icon'></i>  Add to chart</button>
-                            <hr class="view_sep">
-                            <div class="product_price_description">Pret: <span class="main_price">30</span>,<sub class="sec_price">99</sub> ron</div>
-                        </div>  
-                        <div class="product_mini_view">
-                            <div class="product_mini_picture"><img src="./View/client_side/resurse/car.jpg" class="product_image"></div>
-                            <div class="product_mini_description">Masina HotWheels</div>
-                            <button class="add_to_chart_button"><i class='fas fa-shopping-cart add_to_chart_button_icon'></i>  Add to chart</button>
-                            <hr class="view_sep">
-                            <div class="product_price_description">Pret: <span class="main_price">30</span>,<sub class="sec_price">99</sub> ron</div>
-                        </div>  
-                        <div class="product_mini_view">
-                            <div class="product_mini_picture"><img src="./View/client_side/resurse/car.jpg" class="product_image"></div>
-                            <div class="product_mini_description">Masina HotWheels</div>
-                            <button class="add_to_chart_button"><i class='fas fa-shopping-cart add_to_chart_button_icon'></i>  Add to chart</button>
-                            <hr class="view_sep">
-                            <div class="product_price_description">Pret: <span class="main_price">30</span>,<sub class="sec_price">99</sub> ron</div>
-                        </div>  
-                        <div class="product_mini_view">
-                            <div class="product_mini_picture"><img src="./View/client_side/resurse/car.jpg" class="product_image"></div>
-                            <div class="product_mini_description">Masina HotWheels</div>
-                            <button class="add_to_chart_button"><i class='fas fa-shopping-cart add_to_chart_button_icon'></i>  Add to chart</button>
-                            <hr class="view_sep">
-                            <div class="product_price_description">Pret: <span class="main_price">30</span>,<sub class="sec_price">99</sub> ron</div>
-                        </div>  
-                        <div class="product_mini_view">
-                            <div class="product_mini_picture"><img src="./View/client_side/resurse/car.jpg" class="product_image"></div>
-                            <div class="product_mini_description">Masina HotWheels</div>
-                            <button class="add_to_chart_button"><i class='fas fa-shopping-cart add_to_chart_button_icon'></i>  Add to chart</button>
-                            <hr class="view_sep">
-                            <div class="product_price_description">Pret: <span class="main_price">30</span>,<sub class="sec_price">99</sub> ron</div>
-                        </div>  
-                        <div class="product_mini_view">
-                            <div class="product_mini_picture"><img src="./View/client_side/resurse/car.jpg" class="product_image"></div>
-                            <div class="product_mini_description">Masina HotWheels</div>
-                            <button class="add_to_chart_button"><i class='fas fa-shopping-cart add_to_chart_button_icon'></i>  Add to chart</button>
-                            <hr class="view_sep">
-                            <div class="product_price_description">Pret: <span class="main_price">30</span>,<sub class="sec_price">99</sub> ron</div>
-                        </div>  
+                            <div class="product_price_description">Pret: <span class="main_price"><?php echo $results[$i]['pret_produs'];  ?></span> ron</div>    
+                        </div>
+
+                        <?php
+                                }
+                            }
+                        ?>
                         
                     </section>
         

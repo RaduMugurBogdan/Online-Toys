@@ -73,9 +73,8 @@ class ProductsModel{
             $last_product_id=$this->conn->lastInsertId();
             
             for($i=0;$i<count($_FILES['product_pictures']['name']);$i++){
-                $picture_path=addslashes($_FILES['product_pictures']['tmp_name'][$i]);
-                $query="INSERT INTO POZE_PRODUSE(ID,ID_PRODUS,POZA) VALUES(NULL,'${last_product_id}','${picture_path}')";
-                echo $query;
+                $picture_content=addslashes(file_get_contents($_FILES['product_pictures']['tmp_name'][$i]));
+                $query="INSERT INTO POZE_PRODUSE(ID,ID_PRODUS,POZA) VALUES(NULL,'${last_product_id}','${picture_content}')";
                 $stmt=$this->conn->prepare($query);
                 $stmt->execute();
             }
@@ -144,7 +143,35 @@ class ProductsModel{
         $result=$stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
+    public function product_exists($product_id){
+        $query="SELECT * FROM PRODUSE WHERE ID='${product_id}'";
+        $stmt=$this->conn->prepare($query);
+        $stmt->execute();
+        $result=$stmt->fetchAll(PDO::FETCH_ASSOC);
+        if(empty($result)==false){
+            return true;
+        }
+        return false;
+    }
 
+    public function get_product_by_id($product_id){
+        unset($_SESSION['product_data']);
+        unset($_SESSION['product_pictures']);
+        $query="SELECT * FROM PRODUSE WHERE ID='${product_id}'";
+        $stmt=$this->conn->prepare($query);
+        $stmt->execute();
+        $result=$stmt->fetchAll(PDO::FETCH_ASSOC);
+        if(empty($result)==false){
+            $_SESSION['product_data']=$result;
+        }
+        $query="SELECT * FROM POZE_PRODUSE WHERE ID_PRODUS='${product_id}'";
+        $stmt=$this->conn->prepare($query);
+        $stmt->execute();
+        $result=$stmt->fetchAll(PDO::FETCH_ASSOC);
+        if(empty($result)==false){
+            $_SESSION['product_pictures']=$result;
+        }
+    }
     public function __construct(){
         $db=new DatabaseModel();
         $this->conn=$db->get_db_conn();
@@ -213,6 +240,7 @@ if(isset($_GET['action'])){
             echo "";
         }
     }
+    unset($_GET);
     exit;
 }
  

@@ -184,6 +184,7 @@ i.fa:active{
 .product_picture{
     max-width:90%;
     max-height: 90%;
+    display:none;
 }
 /*
 *{

@@ -3,8 +3,7 @@ if(isset($_SESSION)==false){
     session_start();
 }
 
-include './Model/database_model.php'; 
-class FilterMode{
+class FilterModel{
     private $conn=null;
     
     public function get_products($product_brand,$product_category,$material,$op_mode,$age_class,$rec_class){
@@ -22,14 +21,58 @@ class FilterMode{
         $_SESSION['product_age_class']=$age_class;
         $_SESSION['product_rec_class']=$rec_class;
 
+        $filter_array=array();
 
-        $product_brand_request="";
-        $product_category_request="";
-        $product_material_request="";
-        $product_op_mode_request="";
-        $product_age_class_request="";
-        $product_rec_class_request="";
+        $filter_array[0]="";
+        $filter_array[1]="";
+        $filter_array[2]="";
+        $filter_array[3]="";
+        $filter_array[4]="";
+        $filter_array[5]="";
+        
 
+        if(strcmp($product_brand,"Choose")!==0){
+            $filter_array[0]="UPPER(BRAND_NAME)=UPPER('${product_brand}')";    
+        }
+        if(strcmp($product_category,"Choose")!==0){
+            $filter_array[1]="UPPER(CATEGORY_NAME)=UPPER('${product_category}')";    
+        }
+        if(strcmp($material,"Choose")!==0){
+            $filter_array[2]="UPPER(MATERIAL)=UPPER('${material}')";    
+        }
+        if(strcmp($op_mode,"Choose")!==0){
+            $filter_array[3]="UPPER(MOD_FUNC)=UPPER('${op_mode}')";    
+        }
+        if(strcmp($age_class,"Choose")!==0){
+            $filter_array[4]="UPPER(VARSTA)=UPPER('${age_class}')";    
+        }
+        if(strcmp($rec_class,"Choose")!==0){
+            $filter_array[5]="UPPER(DESTINATARI)=UPPER('${rec_class}')";    
+        }
+
+        $filter_index=0;
+        $final_request="";
+        $and_prefix=true;
+
+        while($filter_index<count($filter_array)){
+            if($filter_array[$filter_index]!=="" ){
+                if($and_prefix==false){
+                    $final_request.=" AND ";
+                }else{
+                    $and_prefix=false;
+                }
+                $final_request.=" ".$filter_array[$filter_index]." ";
+            }
+            $filter_index++;
+        }
+        if($final_request!==""){
+            $query="SELECT PRODUSE.ID AS product_id,nume_produs,poza,pret_produs FROM PRODUSE JOIN POZE_PRODUSE ON PRODUSE.ID=POZE_PRODUSE.ID_PRODUS WHERE ${final_request} GROUP BY PRODUSE.ID";
+            $stmt=$this->conn->prepare($query);
+            $stmt->execute();
+            $result=$stmt->fetchAll(PDO::FETCH_ASSOC);
+            unset($_SESSION['filter_results']);
+            $_SESSION['filter_results']=$result;
+        }
 
     }
     
@@ -41,6 +84,13 @@ class FilterMode{
 }
 
 
+if(isset($_POST['brand']) && isset($_POST['category']) && isset($_POST['material']) && isset($_POST['op_mode']) && isset($_POST['age_class']) && isset($_POST['receiver_class'])){
+    include './database_model.php'; 
+    $fm=new FilterModel();
+    $fm->get_products($_POST['brand'],$_POST['category'],$_POST['material'],$_POST['op_mode'],$_POST['age_class'],$_POST['receiver_class']);
+    header("Location:http://localhost/ProiectTW/Online-Toys/products"); 
+    exit();
+}
 
 
 ?>
