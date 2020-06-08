@@ -1,0 +1,195 @@
+body{
+    background-image:url('../resurse/admintoys-wallpaper.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+}
+
+h1{
+    height: 20%;
+    font-size: 50px;
+    text-align: center;
+    color: white;
+    font-family:  cursive;
+    position: relative;
+    left: 40%;    
+}
+
+#lng-content{
+    position: fixed;
+    top: 2%;
+    bottom: 5%;
+    left: 18%;
+    right: 7%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+table{
+    width: 80%;
+}
+
+table, th, td {    
+    border: 2px solid black;
+    border-collapse: collapse;
+    border-color: white;
+}
+
+th, td{
+    padding: 15px;
+    color: white;
+    font-family: cursive;
+    text-align: center;
+}
+
+th{
+    background-color: darkred;
+}
+
+td{
+    background-color: lightcoral;
+}
+
+.lng-btn{
+    border-radius: 10px;
+    border-style: outset;
+    background-color: darkred;
+    width: auto;
+    font-size: 20px;
+    color: white;
+}
+
+.lng-meniu{
+    background-color: darkred;
+    height: 100%;
+    width: 15%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.lng-meniu a{
+    padding: 13px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    display: block;
+}
+
+.lng-meniu img{
+    width: 30px;
+    height: 30px;
+}
+
+#lng-account{
+    position: absolute;
+    bottom: 2%;
+}
+
+a span{
+    position: relative;
+    top: 10px;
+    padding: 10px;
+}
+
+a:hover{
+    color: lightcoral;
+}
+
+#modal{
+    display: none;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width:100%;
+    height:100%;
+    background-color: rgba(0,0,0,0.4);  
+    
+}
+
+#modal-window{
+    margin: 10% auto;
+    padding:20px;
+    background-color: darkred;
+    border-radius: 10px;
+    border-style: outset;
+    width:70%;
+    height:50%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#modal-content{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+#modal-close{
+    width: 50%;
+    align-self: center;
+}
+
+#lng-user-data{
+    display: grid;
+    grid-template-columns: 30% 30%;
+    grid-template-rows: 30% 30% 30% 30%;
+    gap: 2%;
+}
+
+#username{
+    grid-column: 1;
+    grid-row:1;
+}
+
+#usernameData{
+    grid-column: 2;
+    grid-row:1;
+}
+
+#adresa{
+    grid-column: 1;
+    grid-row:2;
+}
+
+#adresaData{
+    grid-column: 2;
+    grid-row:2;
+}
+
+#email{
+    grid-column: 1;
+    grid-row:3;
+}
+
+#emailData{
+    grid-column: 2;
+    grid-row:3;
+}
+
+#tel{
+    grid-column: 1;
+    grid-row:4;
+}
+
+#telData{
+    grid-column: 2;
+    grid-row:4;
+}
+
+.lng-label{
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+#lng-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+

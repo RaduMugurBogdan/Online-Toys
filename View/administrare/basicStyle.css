@@ -1,0 +1,29 @@
+#msg{
+    width: auto;
+    height: 5%;
+    position: absolute;
+    left: 20%;
+    border-radius: 2px;
+    border-style: outset;
+    font-weight: bold;
+    font-size: 12px;
+    font-family: Arial;
+    text-align: left;
+    z-index: 1;
+}
+
+#msg-content
+{
+    padding: 15px;
+}
+
+#modal
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: transparent;  
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+}

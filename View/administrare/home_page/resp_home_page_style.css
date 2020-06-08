@@ -1,0 +1,112 @@
+
+.lng-meniu{
+    background-color: darkred;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 10%;
+}
+
+.lng-meniu a{
+    padding-right: 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 10px;
+    color: white;
+    display: block;
+}
+
+.lng-meniu img{
+    width: 0px;
+    height: 0px;
+}
+
+#lng-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    top: 10%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-y: auto;
+}
+
+#lng-vanzari{
+    margin: 10px;
+    background-color: darkred;
+}
+
+
+#lng-vanzari img{
+    height: 80%;
+}
+
+#lng-comenzinoi{
+    margin: 10px;
+    background-color: darkred;
+    border-style: outset;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#lng-comenzinoi img{
+    height: 80%;
+}
+
+#lng-utilizatorinoi{
+    margin: 10px;
+    background-color: darkred;
+    border-style: outset;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#lng-count-users{
+    color: white;
+    font-size: 40px;
+    position: relative;
+    top: 2%;
+}
+
+#lng-produsenoi{
+    margin: 10px;
+    background-color: darkred;
+    
+}
+
+#lng-produsenoi label{
+    color: white;
+    font-size: 30px;
+}
+
+#lng-stoc{
+    width: 85%;
+    margin: 10px;
+}
+#lng-stoc, th, td{
+    border: 2px solid black;
+    border-collapse: collapse;
+    border-color: white;
+}
+
+#lng-stoc th, td{
+    padding: 5px;
+    color: white;
+    font-family: cursive;
+    text-align: center;
+}
+
+#lng-stoc th{
+    background-color: darkred;
+}
+
+#lng-stoc td{
+    background-color: lightcoral;
+}
