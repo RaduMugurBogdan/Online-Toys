@@ -148,7 +148,7 @@ a{
     margin-bottom: 10px;
     margin-top:10px;
 }
-#logg_out_button{
+.logg_out_button{
     align-self: center;
     margin-top: 50px;
     margin-bottom: 10px;

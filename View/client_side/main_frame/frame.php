@@ -57,13 +57,18 @@ if(isset($_SESSION)==false){
                         ?>
                         
                     </section>
-        
-                    <section id="page_buttons_panel">
-                            <button class="page_buttons" onclick="get_preview_page()"><i class="fa fa-arrow-circle-left" style="font-size:30px"></i></button>
-                            <span id="page_label">Page<span id="curent_page"></span>/<sub id="pages_number"></sub> </span>
-                            <button class="page_buttons" onclick="get_next_page()"><i class="fa fa-arrow-circle-right" style="font-size:30px"></i></button>
-                    </section>
-        
+
+                    <?php
+                         if(isset($_SESSION['filter_results'])){
+                    ?>            
+                        <section id="page_buttons_panel">
+                                <button class="page_buttons" onclick="get_preview_page()"><i class="fa fa-arrow-circle-left" style="font-size:30px"></i></button>
+                                <span id="page_label">Page<span id="curent_page"></span>/<sub id="pages_number"></sub> </span>
+                                <button class="page_buttons" onclick="get_next_page()"><i class="fa fa-arrow-circle-right" style="font-size:30px"></i></button>
+                        </section>
+                    <?php
+                         }
+                    ?>
                 </section> 
 
                 <!--

@@ -1,14 +1,15 @@
 body{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
-    align-content: flex-start;
-    align-items: flex-start;
+    align-content: center;
+    align-items: center;
 }
 #main_panel{
     display:flex;
     flex-direction: column;
     width:500px;
+    height:auto;
     color:white;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;

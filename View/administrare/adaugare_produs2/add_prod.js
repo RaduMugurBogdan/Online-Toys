@@ -1,40 +1,6 @@
 
 
-/*
-function get_brands(){
-    var brands=document.getElementById("brands_container");
-    brands.innerHTML="<option>Choose</option>";
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        var input_object=JSON.parse(this.responseText);
-        for(var i=0;i<input_object.length;i++){
-            brands.innerHTML+="<option>"+input_object[i]['nume_brand']+"</option>";
-        }
-      }
-    };
-    xhttp.open("GET", "http://localhost/ProiectTW/Online-Toys/Model/products_model.php?action=get_brands", true);
-    xhttp.send();
-}
 
-function get_categories(){
-    var categories=document.getElementById("categories_container");
-    categories.innerHTML="<option>Choose</option>";
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        var input_object=JSON.parse(this.responseText);
-        for(var i=0;i<input_object.length;i++){
-            categories.innerHTML+="<option>"+input_object[i]['categorie']+"</option>";
-        }
-        
-      }
-    };
-    xhttp.open("GET", "http://localhost/ProiectTW/Online-Toys/Model/products_model.php?action=get_categories", true);
-    xhttp.send();
-}
-
-*/
 
 function change_pictures(input_object){
     if(input_object.files.length>0){

@@ -51,3 +51,8 @@ function get_preview_page(){
         show_update();
     }
 }
+
+/************************************************** */
+function change_brand($brand_name){
+    
+}

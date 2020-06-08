@@ -13,14 +13,7 @@ class FilterModel{
         unset($_SESSION['product_op_mode']);
         unset($_SESSION['product_age_class']);
         unset($_SESSION['product_rec_class']);
-
-        $_SESSION['product_brand']=$product_brand;
-        $_SESSION['product_category']=$product_category;
-        $_SESSION['product_material']=$material;
-        $_SESSION['product_op_mode']=$op_mode;
-        $_SESSION['product_age_class']=$age_class;
-        $_SESSION['product_rec_class']=$rec_class;
-
+      
         $filter_array=array();
 
         $filter_array[0]="";
@@ -31,22 +24,28 @@ class FilterModel{
         $filter_array[5]="";
         
 
-        if(strcmp($product_brand,"Choose")!==0){
+        if(strcmp($product_brand,"Alege")!==0){
+            $_SESSION['product_brand']=$product_brand;
             $filter_array[0]="UPPER(BRAND_NAME)=UPPER('${product_brand}')";    
         }
-        if(strcmp($product_category,"Choose")!==0){
+        if(strcmp($product_category,"Alege")!==0){
+            $_SESSION['product_category']=$product_category;
             $filter_array[1]="UPPER(CATEGORY_NAME)=UPPER('${product_category}')";    
         }
-        if(strcmp($material,"Choose")!==0){
+        if(strcmp($material,"Alege")!==0){
+            $_SESSION['product_material']=$material;
             $filter_array[2]="UPPER(MATERIAL)=UPPER('${material}')";    
         }
-        if(strcmp($op_mode,"Choose")!==0){
+        if(strcmp($op_mode,"Alege")!==0){
+            $_SESSION['product_op_mode']=$op_mode;
             $filter_array[3]="UPPER(MOD_FUNC)=UPPER('${op_mode}')";    
         }
-        if(strcmp($age_class,"Choose")!==0){
+        if(strcmp($age_class,"Alege")!==0){
+            $_SESSION['product_age_class']=$age_class;
             $filter_array[4]="UPPER(VARSTA)=UPPER('${age_class}')";    
         }
-        if(strcmp($rec_class,"Choose")!==0){
+        if(strcmp($rec_class,"Alege")!==0){
+            $_SESSION['product_rec_class']=$rec_class;
             $filter_array[5]="UPPER(DESTINATARI)=UPPER('${rec_class}')";    
         }
 

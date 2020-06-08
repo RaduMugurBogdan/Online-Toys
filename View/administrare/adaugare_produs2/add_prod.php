@@ -6,14 +6,16 @@ include './Model/database_model.php';
 include './Model/products_model.php';
 $aux_object=new ProductsModel();
 ?>
-<html>
+<!DOCTYPE html>
+<html lang="ro">
     <head>
-        <title></title>
+        <title>Add Products</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./View/administrare/adaugare_produs2/add_prod.css">
+        <link rel="stylesheet" href="../View/administrare/adaugare_produs2/add_prod.css">
+        <link rel="stylesheet" href="../View/administrare/admin_brand_category/admin_bc.css">
     </head>
-    <body>
-        <form id="main_container"  enctype="multipart/form-data" method="POST" action="./Model/products_model.php"> 
+    <body onload="first_load()">
+        <form id="main_container"  enctype="multipart/form-data" method="POST" action="../Model/products_model.php"> 
             <section id="title_panel">
                 Inserati produs
             </section>
@@ -36,7 +38,7 @@ $aux_object=new ProductsModel();
                             echo "<option>Choose</option>";
                             $brands=$aux_object->get_brands();
                             for($i=0;$i<count($brands);$i++){
-                                echo "<option>".$brands[$i]['nume_brand']."</option>";    
+                                echo "<option>".$brands[$i]['NUME_BRAND']."</option>";    
                             }
                         ?>  
                     </select>
@@ -52,7 +54,7 @@ $aux_object=new ProductsModel();
                             echo "<option>Choose</option>";
                             $categories=$aux_object->get_categories();
                             for($i=0;$i<count($categories);$i++){
-                                echo "<option>".$categories[$i]['categorie']."</option>";    
+                                echo "<option>".$categories[$i]['NUME_CATEGORIE']."</option>";    
                             }
                         ?>
                     </select>
@@ -142,8 +144,64 @@ $aux_object=new ProductsModel();
                 <button type="button" class="form_button">Reset</button>             
             </section>
         </form>    
+        <!------------------------------------------------>
+        <section id="main_panel">
+            <form class="options_container" method="POST" action="../Model/products_model.php" id="new_brand_form">
+                <section class="section_title_label">Adauga Brand</section>
+                <section class="controllers_panel">
+                    <span class="option_name_label">Nume brand</span>
+                    <input type="text" class="input_field"  name="insert_brand" id="insert_brand_field">                 
+                    <input type="button" class="valid_button" value="Aplica" onclick="valid_brand_name()">
+                </section>              
+                <section class="error_field" id="brand_field_error">
+                    <?php
+                        if(isset($_SESSION['new_brand_error'])){
+                            echo $_SESSION['new_brand_error'];
+                        }
+                    ?>
+                </section>
+            </form>
+            
+
+            <form class="options_container" method="post" action="../Model/products_model.php">
+                <section class="section_title_label">Sterge Brand</section>
+                <section class="controllers_panel"> 
+                    <span class="option_name_label">Selectati brand</span>
+                    <select class="input_field" name="delete_brand" id="brand_field" onchange="change_brand()">
+                    </select>                 
+                    <input type="submit" class="valid_button" id="delete_brand_button" value="Aplica" disabled>
+                </section>
+            </form>
+            
+            <form class="options_container" method="post" action="../Model/products_model.php" id="new_category_form">
+                <section class="section_title_label">Adauga Categorie</section>
+                <section class="controllers_panel">
+                    <span class="option_name_label">Nume categorie</span>
+                    <input type="text" class="input_field" name="insert_category" id="insert_category_field">
+                    <input type="button" class="valid_button" value="Aplica" onclick="valid_category_name()">
+                </section>   
+                <section class="error_field" id="category_field_error">
+                    <?php
+                        if(isset($_SESSION['new_category_error'])){
+                            echo $_SESSION['new_category_error'];
+                        }
+                    ?>
+                </section>    
+            </form>
+            
+            <form class="options_container" method="post" action="../Model/products_model.php">
+                <section class="section_title_label">Sterge Categorie</section>
+                <section class="controllers_panel"> 
+                    <span class="option_name_label">Selectati categorie</span>
+                    <select class="input_field"  name="delete_category" id="category_field" onchange="change_category()">
+                    </select> 
+                    <input type="submit" class="valid_button" id="delete_category_button" value="Aplica" disabled>
+                </section>   
+            </form>
+
+        </section>
         
-        
-        <script src="./View/administrare/adaugare_produs2/add_prod.js"></script>
+        <script src="../View/administrare/adaugare_produs2/add_prod.js"></script>
+        <script src="../View/administrare/adaugare_produs2/admin_bc.js"></script>
     </body>
 </html>

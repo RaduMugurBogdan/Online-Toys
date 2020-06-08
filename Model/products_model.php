@@ -87,7 +87,7 @@ class ProductsModel{
       
     }
     public function get_brands(){
-        $query="SELECT * FROM BRANDURI";
+        $query="SELECT NUME_BRAND FROM BRANDURI";
         $stmt=$this->conn->prepare($query);
         $stmt->execute();
         $result=$stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -137,7 +137,7 @@ class ProductsModel{
     }
 
     public function get_categories(){
-        $query="SELECT * FROM CATEGORII";
+        $query="SELECT CATEGORIE AS NUME_CATEGORIE FROM CATEGORII";
         $stmt=$this->conn->prepare($query);
         $stmt->execute();
         $result=$stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -192,7 +192,7 @@ if(isset($_POST['insert_brand'])){
     include './database_model.php';
     $aux_object=new ProductsModel();
     $aux_object->insert_brand($_POST['insert_brand']);
-    header('Location:http://localhost/ProiectTW/Online-Toys/admin');
+    header('Location:http://localhost/ProiectTW/Online-Toys/admin/add_product');
     exit;
 }
 
@@ -201,7 +201,7 @@ if(isset($_POST['delete_brand'])){
     include './database_model.php';
     $aux_object=new ProductsModel();
     $aux_object->delete_brand($_POST['delete_brand']);
-    header('Location:http://localhost/ProiectTW/Online-Toys/admin');
+    header('Location:http://localhost/ProiectTW/Online-Toys/admin/add_product');
     exit;
 }
 
@@ -210,7 +210,7 @@ if(isset($_POST['insert_category'])){
     include './database_model.php';
     $aux_object=new ProductsModel(); 
     $aux_object->insert_category($_POST['insert_category']);
-    header('Location:http://localhost/ProiectTW/Online-Toys/admin');
+    header('Location:http://localhost/ProiectTW/Online-Toys/admin/add_product');
     exit;
 }
 
@@ -218,7 +218,7 @@ if(isset($_POST['delete_category'])){
     include './database_model.php';
     $aux_object=new ProductsModel();
     $aux_object->delete_category($_POST['delete_category']);
-    header('Location:http://localhost/ProiectTW/Online-Toys/admin');
+    header('Location:http://localhost/ProiectTW/Online-Toys/admin/add_product');
     exit;
 }
 

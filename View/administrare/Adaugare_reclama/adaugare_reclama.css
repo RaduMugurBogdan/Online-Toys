@@ -42,89 +42,60 @@ a:hover{
     bottom: 2%;
 }
 
-#lng-formular{
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 18%;
-    right: 0;
-    display: grid;
-    overflow-y: auto;
-    grid-template-columns: 10% 30%;
-    grid-template-rows: 40% 10% 10%;
-    gap: 10px;
-}
 
-#lng-img-produs{
-    position: absolute;
-    top: 2%;
-    width: 350px;
-    height: 350px;
-    border-radius: 5px;
-    background-color: darkred;
-    border-style: outset;
+#adv_main_container{
+    position: absolute;;
+    top:20px;
+    left:500px;
+    width:auto;
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: space-between;
+    padding:10px;
+}
+#inputs_container{
+    border-right-style:solid;
+    border-color: white;
+    position: sticky;
+    top:10px;
+    background-color:rgba(255,0,0,0.5);
+    height:500px;
+    width:100%;
+}
+.input_label{
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    width:200px;
+    margin-right: 5px;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    grid-column: 1/3;
-    grid-row: 1;
+}
+.input_panel{
+    margin-top:10px;
+    margin-bottom:10px;
+    width: 100%;
 }
 
-.lng-label-input{
-    display: inline-block;
-    padding: 8px 12px;
-    cursor: pointer;
-    border-style: outset;
-    border-radius: 5px;
-    font-size: 24px;
-    color: white;
+.input_field{
+    height:25px;    
+    max-width: 100%;
 }
-
-input[type="file"]{
-    position: absolute;
-    z-index: -1;
-    left: 0;
-    width: 15%;
+textarea.input_field{
+    width:95%;
+    height: 250px;
 }
-
-#lng-descriere{
-    grid-column: 1;
-    grid-row: 2;
-    display: inline-block;
-    height: 30px;
-    width: 100px;
-    align-self: center;
-    padding: 8px 12px;
-    border-radius: 5px;
-    border-style: outset;
-    background-color: darkred;
-    font-size: 24px;
-    color: white;
-    text-align: center;
+.title{
+    font-size: 25px;
 }
-
-#lng-input-desc{
-    grid-column: 2;
-    grid-row: 2;
-    height: 100%;
-    width: 100%;    
-    display: inline-block;
-    align-self: center;
-    padding: 8px 12px;
-    border-radius: 5px;
-    border-style: outset;
-    background-color: lightsalmon;
-    font-size: 24px;
-    color: white;
+.main_posts_container{
+    margin-left:50px;
+    background-color:rgba(255,0,0,0.5);
 }
-
-#lng-btn{
-    grid-column: 1/3;
-    grid-row: 3;
-    height: 50%;
-    align-self: center;
-    border-radius: 10px;
-    border-style: outset;
-    background-color: darkred;
-    font-size: 20px;
-    color: white;
-}
+/*
+*{
+    border-style:solid;
+}*/

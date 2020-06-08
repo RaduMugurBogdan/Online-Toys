@@ -3,14 +3,14 @@
 class FilterClass{
     private $conn=null;
     public function get_brands(){
-        if($conn==null){
+        if($this->conn==null){
             return null;
         }
         $query="SELECT NUME_BRAND FROM BRANDURI";
         $stmt=$this->conn->prepare($query);
         $stmt->execute();
         $result=$stmt->fetchAll(PDO::FETCH_ASSOC);
-        return json_encode($result);
+        return $result;
     }
 
     public function get_categories($brand_name){
@@ -21,7 +21,7 @@ class FilterClass{
         $stmt=$this->conn->prepare($query);
         $stmt->execute();
         $result=$stmt->fetchAll(PDO::FETCH_ASSOC);
-        return json_encode($result);
+        return $result;
     }
 
     public function get_material($brand_name,$category_name){
@@ -45,7 +45,6 @@ class FilterClass{
     }
 
     public function __construct(){
-        include 'database_model.php';
         $db=new DatabaseModel();
         $this->conn=$db->get_db_conn();
     }

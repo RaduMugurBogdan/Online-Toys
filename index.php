@@ -36,8 +36,20 @@ switch ($path[3]) {
     case 'favorite':
         break;
     case 'admin':{
-        //include './View/administrare/admin_brand_category/admin_bc.php';
-        include './View/administrare/adaugare_produs2/add_prod.php';
+            $path=explode("/",$request);
+            if(isset($path[4])==false){
+                break;
+            }
+            switch($path[4]){
+                case 'add_product':{    
+                    include './View/administrare/adaugare_produs2/add_prod.php';
+                    break;
+                }
+                case 'add_adv':{
+                    include './View/administrare/Adaugare_reclama/adaugare_reclama.php';
+                    break;
+                }  
+            }
         break;   
     }
     default:

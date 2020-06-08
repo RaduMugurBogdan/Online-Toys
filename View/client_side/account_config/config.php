@@ -51,8 +51,7 @@ include './Model/account_model.php';
                 <div class="contact_item"><div class="contact_label">Localitate</div><div class="contact_value"><?php if(isset($_SESSION['log_town'])){echo $_SESSION['log_town'];}?></div></div>
                 
             </section>
-            <button id="logg_out_button">
-                
+            <button class="logg_out_button">
                 <a href="./Model/account_model.php?action=perform_log_out">
                     Log Out
                 </a>
@@ -66,11 +65,7 @@ include './Model/account_model.php';
             </section>
             <hr class="contact_del_line">
             
-            <section class="user_content" id="cont_container">
-
-
-
-           
+            <section class="user_content" id="cont_container">          
                 <?php
                     $acc=new AccountModel();
                     if(isset($_GET['target']) && $_GET['target']=="favorite"){
@@ -115,20 +110,27 @@ include './Model/account_model.php';
                                         
                                         </section>
                                             <section class="mini_view_labels">   
-                                                <span class="brand_name_container"> </span>
-                                                <span class="model_name_container"> </span> 
+                                                <span class="brand_name_container"> <?php echo $results[$i]['brand_name'];?></span>
+                                                <span class="model_name_container"> <?php echo $results[$i]['nume_produs'];?></span>
+                                                <span class="model_name_container"> <?php echo $results[$i]['pret_produs'];?> roni</span> 
                                             </section>
                                             
                                     </section>
-                                    </a>
+                                </a>
                                     <section class="options_panel">
+                                        <section class="post_option" >Numar produse:<input type="number" class="items_number_field" min=0 value=1></section>
                                         <section class="post_option" >Sterge</section>
                                     </section>
                                 </section>
                             </section>
-
                         <?php
                         }
+                        ?>
+                        
+                        <button class="logg_out_button">
+                            Efectuare Comanda
+                        </button>
+                        <?php
                 }   
                 ?>
            </section>

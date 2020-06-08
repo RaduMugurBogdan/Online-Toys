@@ -14,9 +14,51 @@
         <?php
         include './View/client_side/Components/header/header.php';
         ?>
-
-            <section id="frame_body">        
-                <section id="main_adv_container">
+        
+        <section id="frame_body"> 
+            <section id="main_adv_container">
+            <?php
+                include './Model/database_model.php';
+                include './Model/adv_model.php';
+                $adv=new AdvModel();
+                $results=$adv->get_advs();
+                for($i=0;$i<count($results);$i++){
+                   
+            ?>
+             <section class="adv_container">
+                 <?php
+                    if($i%2==0){
+                 ?>
+                        <div class="picture_container">
+                            <?php    
+                                echo '<img class="picture_adv" src="data:image/jpeg;base64,'.base64_encode($results[$i]['poza']).'" />';
+                            ?>
+                        </div>
+                        <div class="adv_text_container">
+                            <?php echo $results[$i]['reclama'];?>
+                        </div>
+                   <?php
+                    }else{
+                    ?>     
+                         <div class="adv_text_container">
+                            <?php echo $results[$i]['reclama'];?>
+                        </div>
+                        <div class="picture_container">
+                            <?php    
+                                echo '<img class="picture_adv" src="data:image/jpeg;base64,'.base64_encode($results[$i]['poza']).'" />';
+                            ?>
+                        </div>
+                        
+                <?php
+                    }
+                ?>
+            </section>
+            <?php
+                }
+            ?>
+            
+<!--       
+                
            
                     <section class="adv_container">
                         <div class="picture_container">
@@ -54,7 +96,7 @@
                         </div>
                     </section>
         
-                
+-->                
                 </section>
 
                 <?php
