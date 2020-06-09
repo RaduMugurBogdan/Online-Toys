@@ -44,14 +44,14 @@ if(isset($_GET['action'])){
             if(isset($_POST['adv_quote']) && isset($_FILES['adv_picture'])){
                 $adv_object->insert_adv($_POST['adv_quote'],$_FILES['adv_picture']);
             }
-            header("Location:http://localhost/ProiectTW/Online-Toys/admin");
+            header("Location:http://localhost/ProiectTW/Online-Toys/admin/add_adv");
             exit;
         }
         case 'delete_adv':{
             if(isset($_GET['adv_id'])){
                 $adv_object->delete_adv($_GET['adv_id']);
             }
-            header("Location:http://localhost/ProiectTW/Online-Toys/admin");
+            header("Location:http://localhost/ProiectTW/Online-Toys/admin/add_adv");
             exit;
         } 
     }

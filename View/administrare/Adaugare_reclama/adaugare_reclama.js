@@ -6,6 +6,7 @@ function check_motto(){
         document.getElementById("motto_error").innerHTML="Motto required";
         return false;
     }
+    document.getElementById("motto_field").value=document.getElementById("motto_field").value.replace(/(?:\r\n|\r|\n)/g, '<br>');
     return true;
 }
 

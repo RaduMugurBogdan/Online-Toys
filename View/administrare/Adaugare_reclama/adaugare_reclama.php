@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Toys</title>
-    
-    <link rel="stylesheet" href="./View/administrare/Componente/mini_personal_view/mini_personal_view.css">
-    <link rel="stylesheet" href="./View/administrare/Adaugare_reclama/adaugare_reclama.css">
-    <link rel="stylesheet" media="(max-width: 414px)" href="./View/administrare/Adaugare_reclama/resp_adaugare_reclama.css">  
+    <link rel="stylesheet" href="../View/administrare/Componente/mini_personal_view/mini_personal_view.css">
+    <link rel="stylesheet" href="../View/administrare/Adaugare_reclama/adaugare_reclama.css">
+    <link rel="stylesheet" media="(max-width: 414px)" href="../View/administrare/Adaugare_reclama/resp_adaugare_reclama.css">  
 </head>
 <body>
     <nav class="lng-meniu">
@@ -71,7 +70,7 @@
                 ?>
             </section>
     </section>    
-    <script src="./View/administrare/Adaugare_reclama/adaugare_reclama.js">
+    <script src="../View/administrare/Adaugare_reclama/adaugare_reclama.js">
     </script>
 </body>
 </html>
