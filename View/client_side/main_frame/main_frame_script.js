@@ -29,3 +29,12 @@ function nav_view_change_state(){
         disp_item[1].style.display="none";
     }
 }
+
+
+function reset_field(){
+   var input_fields=document.getElementsByTagName("select");
+   for(var i=0;i<input_fields.length;i++){
+       input_fields[i].selectedIndex="0";
+   }
+   document.getElementById("nav_details_container").submit();
+}

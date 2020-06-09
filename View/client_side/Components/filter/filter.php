@@ -17,8 +17,8 @@
                     </section>
                     <section class="product_filter_category">
                         <div class="category_title">Producator</div>
-                        <select class="category_body" name="brand" onchange="">
-                            <option>Alege</option>
+                        <select class="category_body" name="brand" >
+                            <option >Alege</option>
                             <?php
                                 $brands=$pfm->get_brands();
                                 for($i=0;$i<count($brands);$i++){
@@ -125,7 +125,7 @@
                         <button class="filter_button" type="submit">
                             Search
                         </button>
-                        <button class="filter_button">
+                        <button type="button" class="filter_button" onclick="reset_field()">
                             Reset
                         </button>
                     </div>    

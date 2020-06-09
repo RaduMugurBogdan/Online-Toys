@@ -117,7 +117,7 @@ class AccountModel{
             $county=$_SESSION['user_county'];
             $town=$_SESSION['user_town'];
             $details=$_SESSION['user_details'];
-            $query="INSERT INTO USERS_TABLE (ID,EMAIL,PASSWORD,NUME,PRENUME,TELEFON,DETALII,JUDET,LOCALITATE) VALUES (null,'${email}','${password}','${last_name}','${first_name}','${phone}','${details}','${county}','${town}')";
+            $query="INSERT INTO USERS_TABLE (ID,EMAIL,PASSWORD,NUME,PRENUME,TELEFON,DETALII,JUDET,LOCALITATE,DATA_REC) VALUES (null,'${email}','${password}','${last_name}','${first_name}','${phone}','${details}','${county}','${town}',SYSDATE())";
             $this->conn->query($query);
             $_SESSION['log_id']=$this->conn->lastInsertedId;
             $_SESSION['log_email']=$email;

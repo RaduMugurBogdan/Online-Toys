@@ -66,13 +66,16 @@ class FilterModel{
         }
         if($final_request!==""){
             $query="SELECT PRODUSE.ID AS product_id,nume_produs,poza,pret_produs FROM PRODUSE JOIN POZE_PRODUSE ON PRODUSE.ID=POZE_PRODUSE.ID_PRODUS WHERE ${final_request} GROUP BY PRODUSE.ID";
-            $stmt=$this->conn->prepare($query);
-            $stmt->execute();
-            $result=$stmt->fetchAll(PDO::FETCH_ASSOC);
-            unset($_SESSION['filter_results']);
-            $_SESSION['filter_results']=$result;
+         
+        }else{
+            $query="SELECT PRODUSE.ID AS product_id,nume_produs,poza,pret_produs FROM PRODUSE JOIN POZE_PRODUSE ON PRODUSE.ID=POZE_PRODUSE.ID_PRODUS GROUP BY PRODUSE.ID";
+         
         }
-
+        $stmt=$this->conn->prepare($query);
+        $stmt->execute();
+        $result=$stmt->fetchAll(PDO::FETCH_ASSOC);
+        unset($_SESSION['filter_results']);
+        $_SESSION['filter_results']=$result;
     }
     
     

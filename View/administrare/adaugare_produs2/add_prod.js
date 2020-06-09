@@ -1,7 +1,5 @@
 
 
-
-
 function change_pictures(input_object){
     if(input_object.files.length>0){
         input_object.nextElementSibling.innerHTML="";
@@ -23,12 +21,17 @@ function valid_formular(){
     var scr_fields=document.getElementsByClassName("scr_field");
     var product_name=document.getElementById("product_name_id");
     var product_price=document.getElementById("product_price_id");
+    var product_stock=document.getElementById("product_stock_id");
     var ok=true;
     for(var i=0;i<scr_fields.length;i++){
         if(scr_fields[i].value.localeCompare("Choose")===0){
             scr_fields[i].nextElementSibling.innerHTML="Empty field";
             ok=false;
         }
+    }
+    if(product_stock.value===""){
+        product_stock.nextElementSibling.innerHTML="Product stock is required";
+        ok=false;
     }
     if(product_name.value===""){
         product_name.nextElementSibling.innerHTML="Product name is required";

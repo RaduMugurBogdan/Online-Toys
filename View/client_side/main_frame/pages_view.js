@@ -53,6 +53,3 @@ function get_preview_page(){
 }
 
 /************************************************** */
-function change_brand($brand_name){
-    
-}

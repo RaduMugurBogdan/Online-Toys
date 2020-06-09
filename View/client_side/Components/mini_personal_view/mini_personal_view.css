@@ -27,8 +27,15 @@
 .model_name_container{
     font-size: 15px;
     margin-top: 5px;
+    max-width:150px;
+    white-space: nowrap;
+  overflow: hidden;
 }
 
+a{
+    
+    text-decoration: none;
+}
 
 .post_container{
     width:100%;
@@ -66,7 +73,49 @@
 .items_number_field{
     width:50px;
 }
+
+
+@media only screen and (max-width: 600px) {
+    .main_posts_container{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        min-width:250px;
+    }
+    .post_container{
+        flex-direction: column;
+        justify-content: center;
+    }   
+    .mini_view_info{
+        flex-direction: column;
+        align-self: center;
+    }
+    .options_panel{
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .mini_view_picture{
+        display: flex;
+        flex-direction: row;
+        justify-content:center;
+        width:100%;
+    }
+    .mini_view_labels{
+        text-align: center;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+}
+
 /*
 *{
     border-style: solid;
-}*/
+    border-color:black;
+    border-width:1px;
+    }*/

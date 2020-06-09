@@ -3,7 +3,6 @@ if(isset($_SESSION)==false){
     session_start();
 }
 
-
 class ProductsModel{
     private $conn=null;
     private $age_classes=null;
@@ -30,7 +29,7 @@ class ProductsModel{
         $this->receiver_classes=['Baieti','Fete','Unisex'];
         $this->material_classes=['Plus si Textile','Plastic','Lemn','Metal'];
     }
-    public function insert_product($product_name,$brand_name,$category_name,$price,$f_mode,$age_class,$material,$receiver_class){
+    public function insert_product($product_name,$brand_name,$category_name,$price,$f_mode,$age_class,$material,$receiver_class,$product_stock){
         unset($_SESSION['product_name_error']);
 
         unset($_SESSION['product_name']);
@@ -41,6 +40,7 @@ class ProductsModel{
         unset($_SESSION['age_class']);
         unset($_SESSION['material']);
         unset($_SESSION['receiver_class']);
+        unset($_SESSION['product_stock']);
 
         try{
             $query="SELECT 1 FROM PRODUSE WHERE NUME_PRODUS='${product_name}'";
@@ -58,12 +58,13 @@ class ProductsModel{
                 $_SESSION['age_class']=$age_class;
                 $_SESSION['material']=$material;
                 $_SESSION['receiver_class']=$receiver_class;
+                $_SESSION['product_stock']=$product_stock;
                 header("Location:http://localhost/ProiectTW/Online-Toys/admin");//redirect to add_product page
             }
 
 
-            $query="INSERT INTO PRODUSE(ID,NUME_PRODUS,BRAND_NAME,CATEGORY_NAME,PRET_PRODUS,MATERIAL,MOD_FUNC,VARSTA,DESTINATARI) 
-            VALUES(NULL,'${product_name}','${brand_name}','${category_name}','${price}','${material}','${f_mode}','${age_class}','${receiver_class}')";
+            $query="INSERT INTO PRODUSE(ID,NUME_PRODUS,BRAND_NAME,CATEGORY_NAME,PRET_PRODUS,MATERIAL,MOD_FUNC,VARSTA,DESTINATARI,STOC) 
+            VALUES(NULL,'${product_name}','${brand_name}','${category_name}','${price}','${material}','${f_mode}','${age_class}','${receiver_class}','${product_stock}')";
             $stmt=$this->conn->prepare($query);
             $stmt->execute();
 
@@ -180,14 +181,13 @@ class ProductsModel{
 }
 
 
-if(isset($_POST['product_name']) && isset($_POST['product_brand']) && isset($_POST['product_price']) && isset($_POST['product_category']) && isset($_POST['product_material']) && isset($_POST['op_mode']) && isset($_POST['age_class']) && isset($_POST['product_receiver']) && isset($_FILES['product_pictures'])){
+if(isset($_POST['product_name']) && isset($_POST['product_brand']) && isset($_POST['product_price']) && isset($_POST['product_category']) && isset($_POST['product_material']) && isset($_POST['op_mode']) && isset($_POST['age_class']) && isset($_POST['product_receiver']) && isset($_FILES['product_pictures'])&& isset($_POST['product_stock'])){
     include './database_model.php';
     $aux_object=new ProductsModel();
-    $aux_object->insert_product($_POST['product_name'],$_POST['product_brand'],$_POST['product_category'],$_POST['product_price'],$_POST['op_mode'],$_POST['age_class'],$_POST['product_material'],$_POST['product_receiver']);
-    header("Location:http://localhost/ProiectTW/Online-Toys/admin");
+    $aux_object->insert_product($_POST['product_name'],$_POST['product_brand'],$_POST['product_category'],$_POST['product_price'],$_POST['op_mode'],$_POST['age_class'],$_POST['product_material'],$_POST['product_receiver'],$_POST['product_stock']);
+    header("Location:http://localhost/ProiectTW/Online-Toys/admin/add_product");
     exit();
 }
-
 if(isset($_POST['insert_brand'])){
     include './database_model.php';
     $aux_object=new ProductsModel();

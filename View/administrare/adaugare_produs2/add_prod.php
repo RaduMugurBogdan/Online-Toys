@@ -22,7 +22,7 @@ $aux_object=new ProductsModel();
             <section id="fields_container">
                 <section class="inputs_panel">
                     <span class="input_label">Nume produs</span> 
-                    <input type="text" class="input_field" id="product_name_id" name="product_name" onchange="change_product_name(this)">   
+                    <input type="text" class="input_field" id="product_name_id" name="product_name" onchange="change_product_name(this)" value="<?php if(isset($_SESSION['product_name'])){echo $_SESSION['product_name'];} ?>">   
                     <div class="error_warn">
                         <?php
                             if(isset($_SESSION['product_name_error'])){
@@ -32,13 +32,18 @@ $aux_object=new ProductsModel();
                     </div>            
                 </section>
                 <section class="inputs_panel">
-                    <span class="input_label"><span>Brand produs</span><span class="plus_button">+</span></span> 
+                   <span class="input_label"><span>Brand produs</span><span class="plus_button">+</span></span> 
                     <select class="input_field scr_field" id="brands_container" name="product_brand" onchange="change_function(this)">
                         <?php
                             echo "<option>Choose</option>";
                             $brands=$aux_object->get_brands();
                             for($i=0;$i<count($brands);$i++){
-                                echo "<option>".$brands[$i]['NUME_BRAND']."</option>";    
+                                if(isset($_SESSION['brand_name']) &&  $_SESSION['brand_name']===$brands[$i]['NUME_BRAND']){
+                                    echo '<option selected>';
+                                }else{
+                                    echo "<option>";
+                                }
+                                echo $brands[$i]['NUME_BRAND']."</option>";    
                             }
                         ?>  
                     </select>
@@ -50,11 +55,15 @@ $aux_object=new ProductsModel();
                     <span class="input_label"><span>Categorie produs</span><span class="plus_button">+</span></span> 
                     <select class="input_field scr_field" id="categories_container" name="product_category" onchange="change_function(this)">
                         <?php
-                            
                             echo "<option>Choose</option>";
                             $categories=$aux_object->get_categories();
                             for($i=0;$i<count($categories);$i++){
-                                echo "<option>".$categories[$i]['NUME_CATEGORIE']."</option>";    
+                                if(isset($_SESSION['category_name']) && $_SESSION['category_name']==$categories[$i]['NUME_CATEGORIE']){
+                                    echo "<option selected>";
+                                }else{
+                                    echo "<option>";
+                                }
+                                echo $categories[$i]['NUME_CATEGORIE']."</option>";    
                             }
                         ?>
                     </select>
@@ -69,7 +78,12 @@ $aux_object=new ProductsModel();
                                echo "<option>Choose</option>";
                                $mat=$aux_object->get_material_classes();
                                for($i=0;$i<count($mat);$i++){
-                                   echo "<option>".$mat[$i]."</option>";    
+                                    if(isset($_SESSION['material']) && $_SESSION['material']==$mat[$i]){
+                                        echo "<option selected>";
+                                    }else{
+                                        echo "<option>";
+                                    }
+                                   echo $mat[$i]."</option>";    
                                 }
                             ?>
                     </select>
@@ -85,7 +99,12 @@ $aux_object=new ProductsModel();
                                echo "<option>Choose</option>";
                                $mat=$aux_object->get_op_mode();
                                for($i=0;$i<count($mat);$i++){
-                                   echo "<option>".$mat[$i]."</option>";    
+                                    if(isset($_SESSION['f_mode']) && $_SESSION['f_mode']==$mat[$i]){
+                                        echo "<option selected>";
+                                    }else{
+                                        echo "<option>";
+                                    }
+                                    echo $mat[$i]."</option>";    
                                 }
                             ?>
                     </select>
@@ -101,7 +120,12 @@ $aux_object=new ProductsModel();
                                echo "<option>Choose</option>";
                                $mat=$aux_object->get_age_classes();
                                for($i=0;$i<count($mat);$i++){
-                                   echo "<option>".$mat[$i]."</option>";    
+                                    if(isset($_SESSION['age_class']) && $_SESSION['age_class']==$mat[$i]){
+                                        echo "<option selected>";
+                                    }else{
+                                        echo "<option>";
+                                    }
+                                    echo $mat[$i]."</option>";    
                                 }
                             ?>
                     </select>               
@@ -117,7 +141,12 @@ $aux_object=new ProductsModel();
                                echo "<option>Choose</option>";
                                $mat=$aux_object->get_receiver_classes();
                                for($i=0;$i<count($mat);$i++){
-                                   echo "<option>".$mat[$i]."</option>";    
+                                    if(isset($_SESSION['receiver_class']) && $_SESSION['receiver_class']==$mat[$i]){
+                                        echo "<option selected>";
+                                    }else{
+                                        echo "<option>";
+                                    }
+                                   echo $mat[$i]."</option>";    
                                 }
                             ?>
                     </select>
@@ -126,8 +155,14 @@ $aux_object=new ProductsModel();
                     </div>               
                 </section>
                 <section class="inputs_panel">
+                    <span class="input_label">Stoc produs</span> 
+                    <input class="input_field" type="number" name="product_stock" id="product_stock_id" onchange="change_product_name(this)" value="<?php if(isset($_SESSION['product_stock'])){echo $_SESSION['product_stock'];}?>">
+                    <div class="error_warn">
+                    </div>               
+                </section>
+                <section class="inputs_panel">
                     <span class="input_label">Pret produs</span> 
-                    <input class="input_field" type="number" name="product_price" id="product_price_id" onchange="change_product_name(this)">
+                    <input class="input_field" type="number" name="product_price" id="product_price_id" onchange="change_product_name(this)" value="<?php if(isset($_SESSION['price'])){echo $_SESSION['price'];}?>">
                             
                     <div class="error_warn">
                     </div>               

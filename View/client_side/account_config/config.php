@@ -101,7 +101,7 @@ include './Model/account_model.php';
                         for($i=0;$i<count($results);$i++){
                         ?>
 
-                            <section class="main_posts_container">
+                            <form class="main_posts_container">
                                 <section class="post_container">
                                 <a href="http://localhost/ProiectTW/Online-Toys/product_page?product_id=<?php echo $results[$i]['id_produs'];?>">    
                                 <section class="mini_view_info">
@@ -110,19 +110,19 @@ include './Model/account_model.php';
                                         
                                         </section>
                                             <section class="mini_view_labels">   
-                                                <span class="brand_name_container"> <?php echo $results[$i]['brand_name'];?></span>
-                                                <span class="model_name_container"> <?php echo $results[$i]['nume_produs'];?></span>
-                                                <span class="model_name_container"> <?php echo $results[$i]['pret_produs'];?> roni</span> 
+                                                <span class="brand_name_container">Brand: <?php echo $results[$i]['brand_name'];?></span>
+                                                <span class="model_name_container">Nume: <?php echo $results[$i]['nume_produs'];?></span>
+                                                <span class="model_name_container">Pret: <?php echo $results[$i]['pret_produs'];?> roni</span> 
                                             </section>
                                             
                                     </section>
                                 </a>
                                     <section class="options_panel">
-                                        <section class="post_option" >Numar produse:<input type="number" class="items_number_field" min=0 value=1></section>
-                                        <section class="post_option" >Sterge</section>
+                                        <section class="post_option" >Numar produse:<input type="number" class="items_number_field" min="0" max="<?php echo $results[$i]['stoc'];?>" value=1></section>
+                                        <section class="post_option" onclick="delete_chart_item(<?php echo 'this,'.$_SESSION['log_id'];?>,<?php echo  $results[$i]['id'];?>)">Sterge</section>
                                     </section>
                                 </section>
-                            </section>
+                            </form>
                         <?php
                         }
                         ?>
