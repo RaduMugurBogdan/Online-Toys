@@ -8,10 +8,14 @@
     <head>
         <title>Create Account</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" http-equiv="Content-Type" content="text/html; charset=utf-8"> 
-        <link rel="stylesheet" href="./utilizatori_style.css">
-        <link rel="stylesheet" href="../Componente/search_mini_view/mini_view_style.css">
+        <link rel="stylesheet" href="./View/administrare/utilizatori/utilizatori_style.css">
+        <link rel="stylesheet" href="./View/administrare/components/search_mini_view/mini_view_style.css">
     </head>
     <body  onload="general_onload_function()">
+        
+        <?php include './View/administrare/components/meniu.php'; ?>
+        
+        <div id="lng-content">
         <section id="filter_panel">
             <form id="main_container" method="POST" action="../../../Model/account_model.php?action=get_user_data">
                 <div id="title_container">    
@@ -77,7 +81,7 @@
                 <span id="title_label">Rezultate</span>
                 </div>
                 <?php
-                    include '../Componente/search_mini_view/mini_view.php';
+                    include './View/administrare/components/search_mini_view/mini_view.php';
                 ?>
                 <section id="page_buttons_panel">
                         <button class="page_buttons"><i class="fa fa-arrow-circle-left" ></i></button>
@@ -95,6 +99,7 @@
                 </section>
             </section>
         </section>
+        </div>
         <script src='https://kit.fontawesome.com/a076d05399.js'></script>
         <script src='./utilizatori_script.js'></script>
     </body>
