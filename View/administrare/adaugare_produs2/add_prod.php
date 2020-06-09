@@ -11,11 +11,15 @@ $aux_object=new ProductsModel();
     <head>
         <title>Add Products</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../View/administrare/adaugare_produs2/add_prod.css">
-        <link rel="stylesheet" href="../View/administrare/admin_brand_category/admin_bc.css">
+        <link rel="stylesheet" href="./View/administrare/adaugare_produs2/add_prod.css">
+<!--        <link rel="stylesheet" href="./View/administrare/adaugare_produs2/admin_bc.css">-->
+<!--        <link rel="stylesheet" href="./View/administrare/adaugare_produs2/adminStyle.css">-->
     </head>
     <body onload="first_load()">
-        <form id="main_container"  enctype="multipart/form-data" method="POST" action="../Model/products_model.php"> 
+        <?php include './View/administrare/components/meniu.php'; ?>
+        
+        <div id="lng-content">
+        <form id="main_container"  enctype="multipart/form-data" method="POST" action="./Model/products_model.php"> 
             <section id="title_panel">
                 Inserati produs
             </section>
@@ -235,8 +239,9 @@ $aux_object=new ProductsModel();
             </form>
 
         </section>
+        </div>
         
-        <script src="../View/administrare/adaugare_produs2/add_prod.js"></script>
-        <script src="../View/administrare/adaugare_produs2/admin_bc.js"></script>
+        <script src="./View/administrare/adaugare_produs2/add_prod.js"></script>
+        <script src="./View/administrare/adaugare_produs2/admin_bc.js"></script>
     </body>
 </html>
