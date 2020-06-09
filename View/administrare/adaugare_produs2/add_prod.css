@@ -1,16 +1,31 @@
+#lng-content{
+    position: relative;
+    left: 15%;
+    width: 80%;
+    height:100%;
+    display: flex;
+    justify-content: space-around;
+}
+
 #main_container{
-    background-color: rgb(0,127,255);
+    background-image:url('../resurse/admintoys-wallpaper.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size:cover;
     height:auto;
-    width:300px;
+    width: 50%;
     padding:10px;
     display:flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    border-style:solid;
+    align-items: flex-start;
+    border-style: outset;
+    border-radius: 10px;
     border-color: white;
-    font-size: 15px;
-    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
 }
 #title_panel{
     font-weight: bold;
@@ -21,31 +36,35 @@
     margin-top:10px;
 }
 #title_panel,#fields_container{
-    width:250px;
+    width:100%;
+    height:100%;
 }
 .inputs_panel{
-    display:flex;
-    flex-direction: column;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     margin-top:15px;
-    border-style:solid;
-    border-color: white;
     padding:5px;
+    
 }
 .input_label{
     width:100%;
     font-weight: bold;
     margin-bottom:5px;
     color:white;
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
 }
 .input_field{
-    width:100%;
-    height:25px;
-    border-style:none;
-    outline:none;
+    border-radius: 10px;
+    border-style: outset;
+    background-color: darkred;
+    color: white;
+}
+
+.input_field:focus{
+    background-color:lightcoral;
+    font-size: 15px;
 }
 .plus_button{
     font-size: 20px;
@@ -55,28 +74,123 @@
     margin-top:25px;
 }
 .form_button{
-    height:30px;
-    color:blue;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    background-color:lightblue;
-    border-style:solid;
-    border-color:white;
+    border-radius: 10px;
+    border-style: outset;
+    background-color: darkred;
+    font-size: 20px;
+    color: white;
 }
 .form_button:active{
     background-color: blue;
     color:white;
 }
 .error_warn{
-    color:yellow;
-    font-size:10ppx;
+    color: lightcoral;
+    font-size: 20px;
     font-weight: bold;
     text-align: center;
-    background-color: red;
     width:100%;
 }
-/*
-*{
-    border-style:solid;
+
+body{
+    background-image:url('../resurse/admintoys-wallpaper.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size:100% 100%;
 }
-*/
+
+.lng-meniu{
+    background-color: darkred;
+    height: 100%;
+    width: 15%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.lng-meniu a{
+    padding: 13px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    display: block;
+}
+
+.lng-meniu img{
+    width: 30px;
+    height: 30px;
+}
+
+#lng-account{
+    position: absolute;
+    bottom: 2%;
+}
+
+a span{
+    position: relative;
+    top: 10px;
+    padding: 10px;
+}
+
+a:hover{
+    color: lightcoral;
+}
+
+
+#main_panel{
+    background-image:url('../resurse/admintoys-wallpaper.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size:cover;
+    height:auto;
+    width: 30%;
+    padding:10px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border-style: outset;
+    border-radius: 10px;
+    border-color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+}
+.options_container{
+    width:100%;
+    margin-top:20px;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+.controllers_panel{
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.section_title_label{
+    font-size:20px;
+    margin-bottom: 20px;
+}
+
+.option_name_label{
+    font-size:20px;
+    width:140px;
+    text-align: left;
+}
+
+.valid_button{
+    border-radius: 10px;
+    border-style: outset;
+    background-color: darkred;
+    font-size: 20px;
+    color: white;
+}
+.valid_button:active{
+    background-color:lightcoral;  
+}
+.valid_button:disabled{
+    background-color: lightgrey;
+}
